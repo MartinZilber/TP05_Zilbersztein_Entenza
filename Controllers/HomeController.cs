@@ -15,8 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-
-        return Vsiew();
+        return View();
     }
 
     public IActionResult Privacy()
@@ -36,6 +35,7 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult Habitacion(int sala, string clave){
+        bool esCorrecto = Escape.ResolverSala(sala, clave);
         return View();
     }
 }
