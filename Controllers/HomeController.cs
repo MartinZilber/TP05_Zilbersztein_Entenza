@@ -37,6 +37,7 @@ public class HomeController : Controller
     }
     public IActionResult Habitacion(int sala, string clave){
         bool esCorrecto = Escape.ResolverSala(sala, clave);
+        
         return View();
     }
 }
