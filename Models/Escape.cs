@@ -7,7 +7,7 @@ class Escape
 
     }
     public static int GetEstadoJuego(){
-        return 0;
+        return 1; //cambiar
     }
     public static bool ResolverSala(int Sala, string Incognita){
         bool esCorrecto = false;

@@ -32,7 +32,8 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult Comenzar(){
-        return View();
+        //como se que habitacion la persona?
+        return View(Escape.GetEstadoJuego().ToString() + "habitacion"); //que sala
     }
     public IActionResult Habitacion(int sala, string clave){
         bool esCorrecto = Escape.ResolverSala(sala, clave);
