@@ -15,7 +15,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+
+        return Vsiew();
     }
 
     public IActionResult Privacy()
@@ -27,5 +28,14 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    public IActionResult Tutorial(){
+        return View();
+    }
+    public IActionResult Comenzar(){
+        return View();
+    }
+    public IActionResult Habitacion(int sala, string clave){
+        return View();
     }
 }
