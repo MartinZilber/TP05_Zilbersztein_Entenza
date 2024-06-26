@@ -25,3 +25,7 @@ body {
   display: none; 
   transition: visibility 0s, opacity 0.5s linear; /*buscar transiciones de show/hide*/}
 #paso1{display: block;}
+
+img{
+  width: 50%
+}
