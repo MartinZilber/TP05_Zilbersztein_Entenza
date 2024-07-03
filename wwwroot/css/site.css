@@ -19,6 +19,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #A39A7A;
 }
 
 .paso{
@@ -28,4 +29,14 @@ body {
 
 img{
   width: 50%
+}
+
+h1{
+  background-color: #575b28;
+  color: #E8E6DE
+}
+a{
+  text-decoration: none;
+  color: black;
+  border: 1 px solid black;
 }
