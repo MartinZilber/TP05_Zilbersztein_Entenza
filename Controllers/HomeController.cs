@@ -44,11 +44,11 @@ public class HomeController : Controller
             Escape.contadorIntentos = 0;
             return View(Escape.estadoJuego + "habitacion");
         }
-        else if (Escape.contadorIntentos < 0)
+        else if (Escape.contadorIntentos < 2)
         {
             ViewBag.Dato = "Dato incorrecto";
         }  
-        Escape.contadorIntentos++;      
+        Escape.contadorIntentos++;
         return View(Escape.estadoJuego + "habitacion");
     }
 }
