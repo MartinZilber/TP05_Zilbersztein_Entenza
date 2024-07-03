@@ -2,6 +2,7 @@ class Escape
 {
     static public string[] incognitasSalas { get; set; } = { "0", "hola" };
     static public int estadoJuego{get;set;} = 1;
+    static public int contadorIntentos{get;set;} = 0;
 
     private static void InicializarJuego(){
         

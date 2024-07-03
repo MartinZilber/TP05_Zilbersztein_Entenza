@@ -38,17 +38,17 @@ public class HomeController : Controller
     }
     public IActionResult Habitacion(int sala, string clave){
         bool esCorrecto = Escape.ResolverSala(sala, clave);
-        int contador = 0;
         if (esCorrecto)
         {
             return View(sala+2 + "habitacion");
             Escape.estadoJuego++;
+            Escape.contadorIntentos = 0;
         }
         else
         {
-            if (contador != 0)
+            if (Escape.contadorIntentos != 0)
             ViewBag.Dato = "Dato incorrecto";
-            contador++;
+            Escape.contadorIntentos++;
             return View(sala+1 + "habitacion");
         }
     }
