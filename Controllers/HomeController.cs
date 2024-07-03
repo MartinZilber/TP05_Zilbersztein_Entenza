@@ -20,7 +20,7 @@ public class HomeController : Controller
 
     public IActionResult Privacy()
     {
-        return View();
+        return View("");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -29,7 +29,8 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
     public IActionResult Tutorial(){
-        return View();
+
+        return RedirectToAction("","");
     }
     public IActionResult Comenzar(){
         //como se que habitacion la persona?
@@ -37,7 +38,18 @@ public class HomeController : Controller
     }
     public IActionResult Habitacion(int sala, string clave){
         bool esCorrecto = Escape.ResolverSala(sala, clave);
-        
-        return View();
+        int contador = 0;
+        if (esCorrecto)
+        {
+            return View(sala+2 + "habitacion");
+            Escape.estadoJuego++;
+        }
+        else
+        {
+            if (contador != 0)
+            ViewBag.Dato = "Dato incorrecto";
+            contador++;
+            return View(sala+1 + "habitacion");
+        }
     }
 }
