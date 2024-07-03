@@ -15,6 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        Escape.estadoJuego = 1;
         return View();
     }
 
@@ -40,16 +41,14 @@ public class HomeController : Controller
         bool esCorrecto = Escape.ResolverSala(sala, clave);
         if (esCorrecto)
         {
-            return View(sala+2 + "habitacion");
-            Escape.estadoJuego++;
             Escape.contadorIntentos = 0;
+            return View(Escape.estadoJuego + "habitacion");
         }
         else
         {
-            if (Escape.contadorIntentos != 0)
             ViewBag.Dato = "Dato incorrecto";
-            Escape.contadorIntentos++;
-            return View(sala+1 + "habitacion");
-        }
+        }  
+        Escape.contadorIntentos++;
+        return View(Escape.estadoJuego + "habitacion");
     }
 }
