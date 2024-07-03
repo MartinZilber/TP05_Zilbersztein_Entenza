@@ -1,0 +1,13 @@
+@ {
+    ViewData["Title"] = "Habitación 3";
+} 
+<h1>Juego sin nombre</h1>
+<h3>Habitación 3</h3>
+<p>Entrás a una habitación que recordas haber visto alguna vez en tu vida. Por alguna razón, te trae recuerdos de tu infancia. </p>
+<p>Aquel lugar tiene un objeto particular que le recuerda un juego que hacía con sus amigos cuando era pequeño: ¿a qué te gustaba jugar?</p>
+<img src="/images/habitacion3">
+<form action='@Url.Action("Habitacion", "Home")'>
+        <input type="descripcion" name="clave" placeholder="" required><br>
+        <input class="btn btn-primary" type="submit" name="Enviar"><br>
+        <input class="btn btn-secondary" type ="reset" name ="Resetear">
+</form>
