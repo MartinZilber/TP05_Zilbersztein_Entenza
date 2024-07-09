@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using TP05_Zilbersztein_Entenza.Models;
 
@@ -39,10 +40,9 @@ public class HomeController : Controller
     }
     public IActionResult Habitacion(int sala, string clave){
         bool esCorrecto = Escape.ResolverSala(sala, clave);
-        if (esCorrecto)
+        if (esCorrecto && Escape.estadoJuego == 5)
         {
-            Escape.contadorIntentos = 0;
-            return View(Escape.estadoJuego + "habitacion");
+            return View("victoria");
         }
         else
         {

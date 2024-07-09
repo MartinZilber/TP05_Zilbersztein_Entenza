@@ -1,6 +1,6 @@
 class Escape
 {
-    static public string[] incognitasSalas { get; set; } = { "0", "12", "piratas" };
+    static public string[] incognitasSalas { get; set; } = { "0", "izquierda", "piratas", "fuego" };
     static public int estadoJuego { get; set; } = 1;
     static public int contadorIntentos { get; set; } = 0;
 
