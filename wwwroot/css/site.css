@@ -33,12 +33,36 @@ img{
 
 h1{
   background-color: #575b28;
-  color: #E8E6DE
+  color: #E8E6DE;
+  text-align: center;
+}
+h3{
+  text-align: center;
 }
 a{
   text-decoration: none;
-  color: black;
+  color: #575b28;
 }
 input{
   margin: 1%
+}
+p{
+  margin-top: 3%;
+}
+.menu{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3%;
+}
+
+.columnas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.columnas div{
+  margin-top: 1%; 
+}
+form{
+  margin-top: 1%;
 }

@@ -8,12 +8,17 @@
     Al entrar, ves un espacio amplio. No conseguís vislumbrar su final. Buscás ayuda pero no encontras a nadie.
     En la pared está pintada la frase “las luces determinan tu camino”. ¿Para dónde deberías ir?
     </p>
-    <img src="/images/habitacion2.png">
-    <form action='@Url.Action("Habitacion", "Home")'>
-        <input type="text" name="clave" placeholder="" required><br>
-        <input class="btn btn-primary" type="submit" name="Validar"><br>
-        <input class="btn btn-secondary" type ="reset" name ="Resetear">
-    </form>
-    <button onclick="alert('Está bastante iluminada la habitación...')"> Pista 1</button>
-    <button onclick="alert('Cuantas más luces en determinadas direcciones, más recomendable es que te dirijas allí. Es más seguro.')"> Pista 2</button>
+    <div class="columnas">
+        <img src="/images/habitacion2.png">
+        <p><b>Ingrese su respuesta:</b></p>
+        <form action='@Url.Action("Habitacion", "Home")'>
+            <input type="text" name="clave" placeholder="" required><br>
+            <input class="btn btn-primary" type="submit" name="Validar">
+            <input class="btn btn-secondary" type ="reset" name ="Resetear"> 
+        </form>
+        <div>
+            <button onclick="alert('Está bastante iluminada la habitación...')"> Pista 1</button>
+            <button onclick="alert('Cuantas más luces en determinadas direcciones, más recomendable es que te dirijas allí. Es más seguro.')"> Pista 2</button>
+        </div>
+    </div>
 </div>
