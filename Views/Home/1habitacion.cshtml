@@ -4,21 +4,26 @@
 <h1>Corrientes subterráneas</h1>
 <h3>EL SUBTE</h3>
 <div id="paso1" class="paso">
-    <p>Estás saliendo del colegio y te dirigis a tomarte el subte para ir al Abasto. Vas caminando por la calle y entras a la estación del transporte.</p>
+    <p>Estás saliendo del colegio y te dirigis a tomarte el subte para ir al Abasto. Vas caminando por la calle y entras
+        a la estación del transporte.</p>
     <img src="/images/habitacion1-1.png">
     <button onclick="mostrarpaso(2)">Continuar</button>
 </div>
 <div id="paso2" class="paso">
     <p>@ViewBag.Dato</p>
-    <p>@ViewBag.contadorIntentosHabitacion</p>
     <p>Esto ya te resultó extraño, sin embargo al ver dentro del transporte no ves a una sola persona.
-    Repentinamente, te sentis demasiado cansado y al estar todos los asientos libres no tenes mejor idea que dormir.
-    Al despertarte, notas que el vehículo está detenido en la estación Carlos Gardel y temes por la hora y pensas en llamar a tu familia. Al verificar tu celular, logras comprobar que no podés contactarte con nadie. Al intentar salir del subte, notás que las puertas no se abren, pero hay un espacio para escribir un código con un papel a su lado. Este dice “el código es el cuádruple de la batería de su celular”. ¿Cuál es el código?</p>
+        Repentinamente, te sentis demasiado cansado y al estar todos los asientos libres no tenes mejor idea que dormir.
+        Al despertarte, notas que el vehículo está detenido en la estación Carlos Gardel y temes por la hora y pensas en
+        llamar a tu familia. Al verificar tu celular, logras comprobar que no podés contactarte con nadie. Al intentar
+        salir del subte, notás que las puertas no se abren, pero hay un espacio para escribir un código con un papel a
+        su lado. Este dice “el código es el cuádruple de la batería de su celular”. ¿Cuál es el código?</p>
     <form action='@Url.Action("Habitacion", "Home")'>
         <input type="number" name="clave" placeholder="" required><br>
         <input class="btn btn-primary" type="submit" name="Validar">
-        <input class="btn btn-secondary" type ="reset" name ="Resetear">
+        <input class="btn btn-secondary" type="reset" name="Resetear">
     </form>
-    <button onclick="alert('Cuando compraste tu celular, te garantizaron poder conectarte con quien quisieras, siempre y cuando tuviera batería')"> Pista 1</button>.
-    <button onclick="alert('Cuenta la leyenda que, en la familia de los números, hay uno invencible: pase lo que pase, suceda lo que le suceda, nunca cambia; nunca se ve afectado. Su ayuda será crucial para avanzar en tu camino')"> Pista 2</button>.
+    <!--<form action='@Url.Action("Incrementar", "Home")'>
+        <button onclick="alert('Cuando compraste tu celular, te garantizaron poder conectarte con quien quisieras, siempre y cuando tuviera batería')">Pista 1</button>.
+        <button onclick="alert('Cuenta la leyenda que, en la familia de los números, hay uno invencible: pase lo que pase, suceda lo que le suceda, nunca cambia; nunca se ve afectado. Su ayuda será crucial para avanzar en tu camino')">Pista 2</button>.
+    </form> -->
 </div>

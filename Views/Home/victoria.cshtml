@@ -1,9 +1,10 @@
 @{
     ViewData["Title"] = "Victoria";
 }
+<div id="paso1" class="paso">
 <h1>¡Felicidades, lograste escapar!</h1>
 <p>Habiendo quemado a la Hidra se vuelve a abrir la puerta de la habitación anterior se abre y, al pasar, entrás a la estación de subte.</p>
-<p>¡Felicidades, has escapado!
+<p>¡Felicidades, @ViewBag.nombre, has escapado!
 Lograste superar todos los desafíos y escapar de las profundidades de los backrooms. Tu ingenio y perseverancia te llevaron a través de las habitaciones, resolviendo cada enigma y descifrando cada pista con maestría.
 
 Has demostrado una habilidad excepcional para enfrentar y superar obstáculos. Cada habitación que dejaste atrás es testimonio de tu capacidad para pensar críticamente y mantener la calma bajo presión.
@@ -13,4 +14,11 @@ El viaje no fue fácil, pero tu determinación ha prevalecido: llegaste a la úl
 ¡Gracias por jugar "Corrientes subterráneas"! Esperamos que hayas disfrutado de esta aventura tanto como nosotros disfrutamos creando cada desafío. ¿Estás listo para más aventuras? Mantenete atento para futuras actualizaciones y nuevos enigmas por resolver. Para estar más informado, podés seguirnos en Instagram: deberíamos crear una cuenta
 
 ¡Hasta la próxima, y sigue desafiando tu mente!</p>
+<p>Hacé click <button onclick="mostrarpaso(2)">acá</button> para ver tus estadísticas</p>
+</div>
+<div id="paso2" class="paso">
+    <h1>Estadísticas</h1>
+    <p>Cantidad de intentos totales: @ViewBag.contadorIntentos</p>
+    <p>Cantidad de pistas pedidas: </p>
+</div>
 <!-- Luego debo añadir un videito feliz -->

@@ -7,3 +7,10 @@
 <a href='@Url.Action("Comenzar","Home")'>Iniciar juego</a>
 <a href='@Url.Action("Creditos","Home")'>Créditos</a>
 <p>Sumergite en una aventura única donde la realidad y lo desconocido se entrelazan en los misteriosos backrooms. Tu viaje comienza en las profundidades de un subte que parece ser uno más de los que se usan diariamente, pero que termina en un lugar totalmente desconocido, en el cual encontrarás criaturas inimaginables. Cada pista y cada indicio te acercarán a la salida... si es que existe.</p>
+<p>Ingresá tu nombre (opcional)</p>
+<form action='@Url.Action("GuardarNombre", "Home")'>
+    <input type="text" name="nombre" placeholder=""><br>
+    <input class="btn btn-primary" type="submit" name="Enviar">
+    <input class="btn btn-secondary" type="reset" name="Resetear">
+</form>
+<p>@ViewBag.nombre</p>

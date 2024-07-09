@@ -38,11 +38,18 @@ public class HomeController : Controller
     {
         return View("creditos");
     }
+    public IActionResult victoria()
+    {
+        ViewBag.contadorIntentos = Escape.contadorIntentos;
+        ViewBag.nombre = Escape.nombre;
+        return View("victoria");
+    }
     public IActionResult Comenzar()
     {
         //como se que habitacion la persona?
         Escape.contadorIntentos = 0;
         Escape.contadorIntentosHabitacion = 0;
+        Escape.contadorPistas = 0;
         return View(Escape.GetEstadoJuego().ToString() + "habitacion"); //que sala
     }
     public IActionResult Habitacion(int sala, string clave)
@@ -64,6 +71,18 @@ public class HomeController : Controller
             Escape.contadorIntentosHabitacion++;
             Escape.contadorIntentos++;
         }
+        return View(Escape.estadoJuego + "habitacion");
+    }
+    
+    public IActionResult GuardarNombre(string nombre){
+        Escape.nombre = nombre;
+        ViewBag.nombre = Escape.nombre;
+        return View("Index");
+    }
+    public IActionResult Incrementar()
+    {
+        Escape.contadorPistas++;
+        ViewBag.contadorPistas = "Cantidad de veces pistas pedidas: " + Escape.contadorPistas;
         return View(Escape.estadoJuego + "habitacion");
     }
 }

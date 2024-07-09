@@ -4,6 +4,8 @@ class Escape
     static public int estadoJuego { get; set; } = 1;
     static public int contadorIntentos { get; set; } = 0;
     static public int contadorIntentosHabitacion { get; set; } = 0;
+    static public int contadorPistas { get; set; } = 0;
+    static public string nombre { get; set; }
 
     private static void InicializarJuego()
     {
