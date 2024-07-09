@@ -3,6 +3,7 @@ class Escape
     static public string[] incognitasSalas { get; set; } = { "0", "izquierda", "piratas", "fuego" };
     static public int estadoJuego { get; set; } = 1;
     static public int contadorIntentos { get; set; } = 0;
+    static public int contadorIntentosHabitacion { get; set; } = 0;
 
     private static void InicializarJuego()
     {
@@ -14,7 +15,11 @@ class Escape
     public static bool ResolverSala(int Sala, string Incognita)
     {
         bool esCorrecto = false;
-        if (Incognita == incognitasSalas[estadoJuego-1])
+        /*if (Sala == estadoJuego)
+        {
+
+        }PREGUNTAR*/
+        if (Incognita == incognitasSalas[estadoJuego - 1])
         {
             estadoJuego++;
             esCorrecto = true;

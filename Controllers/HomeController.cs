@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using AspNetCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TP05_Zilbersztein_Entenza.Models;
 
@@ -30,25 +30,40 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
-    public IActionResult Tutorial(){
-
-        return RedirectToAction("","");
+    public IActionResult Tutorial()
+    {
+        return View("tutorial");
     }
-    public IActionResult Comenzar(){
+    public IActionResult creditos()
+    {
+        return View("creditos");
+    }
+    public IActionResult Comenzar()
+    {
         //como se que habitacion la persona?
+        Escape.contadorIntentos = 0;
+        Escape.contadorIntentosHabitacion = 0;
         return View(Escape.GetEstadoJuego().ToString() + "habitacion"); //que sala
     }
-    public IActionResult Habitacion(int sala, string clave){
+    public IActionResult Habitacion(int sala, string clave)
+    {
         bool esCorrecto = Escape.ResolverSala(sala, clave);
-        if (esCorrecto && Escape.estadoJuego == 5)
+        ViewBag.contadorIntentosHabitacion = Escape.contadorIntentosHabitacion;
+        if (esCorrecto)
         {
-            return View("victoria");
+            Escape.contadorIntentosHabitacion = 0;
+            ViewBag.Dato = "";
+            if (Escape.estadoJuego == 5) return View("victoria");
         }
         else
         {
-            ViewBag.Dato = "Dato incorrecto";
-        }  
-        Escape.contadorIntentos++;
+            if (Escape.contadorIntentosHabitacion >= 0)
+            {
+                ViewBag.Dato = "Dato incorrecto";
+            }
+            Escape.contadorIntentosHabitacion++;
+            Escape.contadorIntentos++;
+        }
         return View(Escape.estadoJuego + "habitacion");
     }
 }
