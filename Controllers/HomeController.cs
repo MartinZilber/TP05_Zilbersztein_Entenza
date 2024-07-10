@@ -40,6 +40,7 @@ public class HomeController : Controller
     public IActionResult Victoria()
     {
         int cantIntentosTotales = Escape.CalcularEstadisticas(); 
+        ViewBag.contadorIntentos = cantIntentosTotales;
         return View("victoria");
     }
     public IActionResult Comenzar()
@@ -53,7 +54,7 @@ public class HomeController : Controller
         if (esCorrecto)
         {
             ViewBag.Dato = "";
-            if (Escape.GetEstadoJuego() == 10)
+            if (Escape.GetEstadoJuego() >= 10)
             return View("victoria");
         }
         else

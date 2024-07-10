@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.ViewFeatures.Buffers;
+
 class Escape
 {
     static private string[] incognitasSalas { get; set; } = { "0", "10", "izquierda", "ramo", "almohada", "rojo", "piratas", "para elisa", "fuego" };
@@ -25,16 +27,16 @@ class Escape
         {
             if (Incognita == incognitasSalas[Sala - 1])
             {
-                if (estadoJuego <=9)
-                estadoJuego++;
                 esCorrecto = true;
                 contadorIntentosHabitacion = 0;
+                if (estadoJuego < 9)
+                estadoJuego++;
             }
             else
             {
-                contadorIntentosHabitacion++;
                 contadorIntentos++;
             }
+            
         }
         return esCorrecto;
     }
