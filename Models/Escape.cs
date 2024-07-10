@@ -1,14 +1,18 @@
 class Escape
 {
-    static public string[] incognitasSalas { get; set; } = { "0", "izquierda", "piratas", "fuego" };
-    static public int estadoJuego { get; set; } = 1;
-    static public int contadorIntentos { get; set; } = 0;
-    static public int contadorIntentosHabitacion { get; set; } = 0;
-    static public int contadorPistas { get; set; } = 0;
-    static public string nombre { get; set; }
+    static private string[] incognitasSalas { get; set; } = { "0", "izquierda", "piratas", "fuego" };
+    static private int estadoJuego { get; set; } = 1;
+    static private int contadorIntentos { get; set; } = 0;
+    static private int contadorIntentosHabitacion { get; set; } = 0;
+    static private int contadorPistas { get; set; } = 0;
+    static private string nombre { get; set; }
 
-    private static void InicializarJuego()
+    public static void InicializarJuego()
     {
+        contadorIntentos = 0;
+        contadorIntentosHabitacion = 0;
+        contadorPistas = 0;
+        estadoJuego = 1;
     }
     public static int GetEstadoJuego()
     {
@@ -17,15 +21,21 @@ class Escape
     public static bool ResolverSala(int Sala, string Incognita)
     {
         bool esCorrecto = false;
-        /*if (Sala == estadoJuego)
-        {
-
-        }PREGUNTAR*/
-        if (Incognita == incognitasSalas[estadoJuego - 1])
+        if (Incognita == incognitasSalas[Sala - 1])
         {
             estadoJuego++;
             esCorrecto = true;
+            contadorIntentosHabitacion = 0;
+        }
+        else
+        {
+            contadorIntentosHabitacion++;
+            contadorIntentos++;
         }
         return esCorrecto;
+    }
+    public static string GuardarNombre(string nombre){
+        string Nombre = nombre;
+        return Nombre;
     }
 }
