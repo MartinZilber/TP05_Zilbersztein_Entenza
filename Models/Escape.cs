@@ -25,6 +25,7 @@ class Escape
         {
             if (Incognita == incognitasSalas[Sala - 1])
             {
+                if (estadoJuego <=9)
                 estadoJuego++;
                 esCorrecto = true;
                 contadorIntentosHabitacion = 0;

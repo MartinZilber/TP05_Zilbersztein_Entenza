@@ -53,11 +53,12 @@ public class HomeController : Controller
         if (esCorrecto)
         {
             ViewBag.Dato = "";
-            if (Escape.GetEstadoJuego() >= 10)
-            return View("victoria")
+            if (Escape.GetEstadoJuego() == 10)
+            return View("victoria");
         }
         else
         ViewBag.Dato = "Dato incorrecto";
+        ViewBag.Sala = sala;
         return View("habitacion" + (Escape.GetEstadoJuego()).ToString());
     }
     public IActionResult GuardarNombre(string nombre)
