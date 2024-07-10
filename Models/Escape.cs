@@ -21,20 +21,24 @@ class Escape
     public static bool ResolverSala(int Sala, string Incognita)
     {
         bool esCorrecto = false;
-        if (Incognita == incognitasSalas[Sala - 1])
+        if (Sala == estadoJuego)
         {
-            estadoJuego++;
-            esCorrecto = true;
-            contadorIntentosHabitacion = 0;
-        }
-        else
-        {
-            contadorIntentosHabitacion++;
-            contadorIntentos++;
+            if (Incognita == incognitasSalas[Sala - 1])
+            {
+                estadoJuego++;
+                esCorrecto = true;
+                contadorIntentosHabitacion = 0;
+            }
+            else
+            {
+                contadorIntentosHabitacion++;
+                contadorIntentos++;
+            }
         }
         return esCorrecto;
     }
-    public static string GuardarNombre(string nombre){
+    public static string GuardarNombre(string nombre)
+    {
         string Nombre = nombre;
         return Nombre;
     }
