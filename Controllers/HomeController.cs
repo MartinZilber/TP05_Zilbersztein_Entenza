@@ -16,7 +16,6 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        Escape.estadoJuego = 1;
         return View();
     }
 
@@ -40,49 +39,40 @@ public class HomeController : Controller
     }
     public IActionResult victoria()
     {
-        ViewBag.contadorIntentos = Escape.contadorIntentos;
-        ViewBag.nombre = Escape.nombre;
         return View("victoria");
     }
     public IActionResult Comenzar()
     {
-        //como se que habitacion la persona?
-        Escape.contadorIntentos = 0;
-        Escape.contadorIntentosHabitacion = 0;
-        Escape.contadorPistas = 0;
+        Escape.InicializarJuego();
         return View(Escape.GetEstadoJuego().ToString() + "habitacion"); //que sala
     }
     public IActionResult Habitacion(int sala, string clave)
     {
         bool esCorrecto = Escape.ResolverSala(sala, clave);
-        ViewBag.contadorIntentosHabitacion = Escape.contadorIntentosHabitacion;
         if (esCorrecto)
         {
-            Escape.contadorIntentosHabitacion = 0;
             ViewBag.Dato = "";
-            if (Escape.estadoJuego == 5) return View("victoria");
+            if (sala == 5)
+            return View("victoria");
+            else
+            sala++;
         }
         else
         {
-            if (Escape.contadorIntentosHabitacion >= 0)
-            {
-                ViewBag.Dato = "Dato incorrecto";
-            }
-            Escape.contadorIntentosHabitacion++;
-            Escape.contadorIntentos++;
+            ViewBag.Dato = "Dato incorrecto";
         }
-        return View(Escape.estadoJuego + "habitacion");
+        return View((sala).ToString() + "habitacion");
+
     }
-    
-    public IActionResult GuardarNombre(string nombre){
-        Escape.nombre = nombre;
-        ViewBag.nombre = Escape.nombre;
-        return View("Index");
+    public IActionResult GuardarNombre(string nombre)
+    {
+        ViewBag.Nombre = Escape.GuardarNombre(nombre);
+        return View("index");
     }
-    public IActionResult Incrementar()
+    /*public IActionResult Incrementar()
     {
         Escape.contadorPistas++;
         ViewBag.contadorPistas = "Cantidad de veces pistas pedidas: " + Escape.contadorPistas;
         return View(Escape.estadoJuego + "habitacion");
-    }
+    }*/
 }

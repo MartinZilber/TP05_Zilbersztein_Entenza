@@ -13,9 +13,9 @@
 <div class="columnas">
     <p><b>Ingresá tu nombre (opcional)</b></p>
     <form action='@Url.Action("GuardarNombre", "Home")'>
-        <input type="text" name="nombre" placeholder=""> <br>
+        <input required type="text" name="nombre" placeholder=""> <br>
         <input class="btn btn-primary" type="submit" name="Enviar"> 
         <input class="btn btn-secondary" type="reset" name="Resetear">
     </form>
-    <p><b>¡Bienvenido(a) @ViewBag.nombre! Disfrute del juego :D</b></p>
+    <p><b>¡Bienvenido(a) @ViewBag.nombre! Disfrutá del juego :D</b></p>
 </div>

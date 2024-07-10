@@ -7,9 +7,10 @@
 <p>Aquel lugar tiene un objeto particular que le recuerda un juego que hacía con sus amigos cuando era pequeño: ¿a qué te gustaba jugar?</p>
 <div class="columnas">
     <img src="/images/habitacion3.png">
-    <p><b>Ingrese su respuesta:</b></p>
+    <p><b>Ingresá tu respuesta:</b></p>
     <form action='@Url.Action("Habitacion", "Home")'>
-        <input type="descripcion" name="clave" placeholder="" required><br>
+        <input autocomplete="off" type="descripcion" name="clave" placeholder="" required><br>
+        <input type="hidden" name="sala" value=3>
         <input class="btn btn-primary" type="submit" name="Validar">
         <input class="btn btn-secondary" type ="reset" name ="Resetear">
     </form>
