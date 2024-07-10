@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Habitación 4";
+} 
+<h1>Corrientes subterráneas</h1>
+<h3>EL PATIO DESCUIDADO</h3>
+<p>Al salir de la habitación gigante, llegás a un pequeño patio que parece haber sido deslumbrante y brillante en un pasado; pero que ahora solo tiene una pileta, dos objetos misteriosos y unos descuidados yuyos.
+Intentás salir del patio, pero no podés: hay una barrera invisible que te mantiene adentro.
+</p>
+<div class="columnas">
+    <img src="/images/habitacion4.png">
+    <p><b>Ingresá tu respuesta:</b></p>
+    <form action='@Url.Action("Habitacion", "Home")'>
+        <input type="hidden" name="sala" value= 4>
+        <input autocomplete="off" type="text" name="clave" placeholder="" required><br>
+        <input class="btn btn-primary" type="submit" name="Validar">
+        <input class="btn btn-secondary" type ="reset" name ="Resetear">
+    </form>
+    <div>
+        <button onclick="alert('Trabajo para Lei jaja lol')">Pista 1</button>
+        <button onclick="alert('Trabajo para Lei jaja lol')">Pista 2</button>
+    </div>
+</div>

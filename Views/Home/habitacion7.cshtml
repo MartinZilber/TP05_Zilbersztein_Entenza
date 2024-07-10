@@ -1,19 +1,21 @@
 @{
-    ViewData["Title"] = "Habitación 3";
+    ViewData["Title"] = "Habitación 7";
 } 
 <h1>Corrientes subterráneas</h1>
 <h3>LA HABITACIÓN DE LA NOSTALGIA</h3>
 <p>Entrás a una habitación que recordas haber visto alguna vez en tu vida. Por alguna razón, te trae recuerdos de tu infancia. </p>
 <p>Aquel lugar tiene un objeto particular que le recuerda un juego que hacía con sus amigos cuando era pequeño: ¿a qué te gustaba jugar?</p>
 <div class="columnas">
-    <img src="/images/habitacion3.png">
+    <img src="/images/habitacion7.png">
     <p><b>Ingresá tu respuesta:</b></p>
     <form action='@Url.Action("Habitacion", "Home")'>
         <input autocomplete="off" type="descripcion" name="clave" placeholder="" required><br>
-        <input type="hidden" name="sala" value=3>
+        <input type="hidden" name="sala" value=7>
         <input class="btn btn-primary" type="submit" name="Validar">
         <input class="btn btn-secondary" type ="reset" name ="Resetear">
     </form>
-    <button onclick="alert('Presta atención a los objetos de la habitación')"></button>
-    <button onclick="alert('¿Con qué podes relacionar el baul?')"></button>
+    <div>
+        <button onclick="alert('Presta atención a los objetos de la habitación')">Pista 1</button>
+        <button onclick="alert('¿Con qué podes relacionar el baul?')">Pista 2</button>
+    </div>
 </div>

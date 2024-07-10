@@ -12,8 +12,8 @@
         <img src="/images/habitacion2.png">
         <p><b>Ingresá tu respuesta:</b></p>
         <form action='@Url.Action("Habitacion", "Home")'>
+            <input type="hidden" name="sala" value= 3>
             <input autocomplete="off" type="text" name="clave" placeholder="" required><br>
-            <input type="hidden" name="sala" value=2>
             <input class="btn btn-primary" type="submit" name="Validar">
             <input class="btn btn-secondary" type ="reset" name ="Resetear"> 
         </form>

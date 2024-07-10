@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Habitación 4";
+    ViewData["Title"] = "Habitación 9";
 }
 <h1>Corrientes subterráneas</h1>
 <h3>LA HABITACIÓN INUNDADA</h3>
@@ -7,14 +7,16 @@
 <p>La hidra se acerca rápidamente. Debés acabar con ella. 
 Recordás que en la mitología griega la hidra tiene solo una debilidad que, en cierto modo, contradice su nombre. Sin embargo, necesitás conseguir aquel elemento. ¿Qué elemento necesitás?</p>
 <div class="columas">
-    <img src="/images/habitacion4.png">
+    <img src="/images/habitacion9.png">
     <p><b>Ingresá tu respuesta:</b></p>
     <form action='@Url.Action("Habitacion", "Home")'>
-            <input type="hidden" name="sala" value=4>
+            <input type="hidden" name="sala" value=9>
             <input autocomplete="off" type="descripcion" name="clave" placeholder="" required><br>
             <input class="btn btn-primary" type="submit" name="Validar">
             <input class="btn btn-secondary" type ="reset" name ="Resetear">
     </form>
-    <button onclick="alert('¿De qué palabra viene Hidra?')"></button>
-    <button onclick="alert('¿Qué puede apagar el elemento que viene de su nombre?')"></button>
+    <div>
+        <button onclick="alert('¿De qué palabra viene Hidra?')">Pista 1</button>
+        <button onclick="alert('¿Qué puede apagar el elemento que viene de su nombre?')">Pista 2</button>
+    </div>
 </div>

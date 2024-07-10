@@ -1,0 +1,20 @@
+@{
+ViewData["Title"] = "Habitación 8";
+}
+<h1>Corrientes Subterráneas</h1>
+<h3>LA SALA DE ENSAYO</h3>
+<p>Entras a una sala que parece ser una sala de ensayo. Allí ves un piano, sin embargo notas que las teclas se encuentran viejas y al toca una tecla te extraña escuchar una canción en guitarra eléctrica. ¿Qué canción es?</p>
+<div class="columnas">
+    <img src="/images/habitacion8.jpg">
+    <audio controls src="/audios/AudioHabitacion8.mp4">Audio</audio>
+    <form action='@Url.Action("Habitacion", "Home")'>
+        <input type="hidden" name="sala" value=8>
+        <input autocomplete="off" type="text" name="clave" placeholder="" required><br>
+        <input class="btn btn-primary" type="submit" name="Validar">
+        <input class="btn btn-secondary" type ="reset" name ="Resetear">
+    </form>
+    <div>
+        <button onclick="alert('Trabajo para Lei jaja lol')">Pista 1</button>
+        <button onclick="alert('Trabajo para Lei jaja lol')">Pista 2</button>
+    </div>
+</div>

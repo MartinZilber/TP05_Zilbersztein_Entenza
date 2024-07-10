@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Corrientes subterráneas</h1>
+
+<h3>EL PASILLO SIN FIN</h3>
+    <p>Al salir del subte, encontrás un extenso pasillo con muchas puertas, tanto abiertas como cerradas. Al final de este, hay una extraña calculadora en la que podés poner el código para pasar a la siguiente habitación. Sin embargo, no sabés cuál es este mismo. Hay un texto garabateado en una de las paredes: “Todos los caminos conducen a Roma”. ¿Cuál es la clave?
+    </p>
+    <div class="columnas">
+        <img src="/images/habitacion2.png">
+        <p><b>Ingresá tu respuesta:</b></p>
+        <form action='@Url.Action("Habitacion", "Home")'>
+            <input type="hidden" name="sala" value= 2>
+            <input autocomplete="off" type="number" name="clave" placeholder="" required><br>
+            <input class="btn btn-primary" type="submit" name="Validar">
+            <input class="btn btn-secondary" type ="reset" name ="Resetear"> 
+        </form>
+        <div>
+            <button onclick="alert('Las puertas no parecen llevarte a lugares seguros… ')"> Pista 1</button>
+            <button onclick="alert('Todas las puertas te llevan al mismo lugar…')"> Pista 2</button>
+        </div>
+    </div>
+</div>

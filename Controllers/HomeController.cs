@@ -33,18 +33,19 @@ public class HomeController : Controller
     {
         return View("tutorial");
     }
-    public IActionResult creditos()
+    public IActionResult Creditos()
     {
         return View("creditos");
     }
-    public IActionResult victoria()
+    public IActionResult Victoria()
     {
+        int cantIntentosTotales = Escape.CalcularEstadisticas(); 
         return View("victoria");
     }
     public IActionResult Comenzar()
     {
         Escape.InicializarJuego();
-        return View(Escape.GetEstadoJuego().ToString() + "habitacion"); //que sala
+        return View("habitacion" + Escape.GetEstadoJuego().ToString()); //que sala
     }
     public IActionResult Habitacion(int sala, string clave)
     {
@@ -52,17 +53,12 @@ public class HomeController : Controller
         if (esCorrecto)
         {
             ViewBag.Dato = "";
-            if (sala == 5)
-            return View("victoria");
-            else
-            sala++;
+            if (Escape.GetEstadoJuego() >= 10)
+            return View("victoria")
         }
         else
-        {
-            ViewBag.Dato = "Dato incorrecto";
-        }
-        return View((sala).ToString() + "habitacion");
-
+        ViewBag.Dato = "Dato incorrecto";
+        return View("habitacion" + (Escape.GetEstadoJuego()).ToString());
     }
     public IActionResult GuardarNombre(string nombre)
     {
