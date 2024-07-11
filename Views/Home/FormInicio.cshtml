@@ -5,7 +5,7 @@
 <div class="columnas">
     <p><b>Ingresá tu nombre</b></p>
     <form action='@Url.Action("GuardarDatos", "Home")'>
-        <input required type="text" name="nombre" placeholder=""> <br>
+        <input autocomplete="off" required type="text" name="nombre" placeholder=""> <br>
         <p>Elegí el nivel de dificultad:</p>
         <input required type="radio" name="nivel" value="facil">Fácil<br>
         <input required type="radio" name="nivel" value="medio">Medio<br>
