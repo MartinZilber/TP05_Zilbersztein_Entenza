@@ -46,7 +46,7 @@ public class HomeController : Controller
     public IActionResult Comenzar()
     {
         Escape.InicializarJuego();
-        return View("habitacion" + Escape.GetEstadoJuego().ToString()); //que sala
+        return View("FormInicio"); //que sala
     }
     public IActionResult Habitacion(int sala, string clave)
     {
@@ -57,15 +57,19 @@ public class HomeController : Controller
             if (Escape.GetEstadoJuego() >= 10)
             return View("victoria");
         }
-        else
-        ViewBag.Dato = "Dato incorrecto";
-        ViewBag.Sala = sala;
-        return View("habitacion" + (Escape.GetEstadoJuego()).ToString());
+        else if (Escape.GetVidas() > 0)
+        {
+            ViewBag.Dato = "Dato incorrecto";
+            return View("habitacion" + (Escape.GetEstadoJuego()).ToString());
+        }
+        return View("derrota");
     }
-    public IActionResult GuardarNombre(string nombre)
+    public IActionResult GuardarDatos(string nombre, string Nivel)
     {
         ViewBag.Nombre = Escape.GuardarNombre(nombre);
-        return View("index");
+        Escape.GuardarNivel(Nivel);
+        ViewBag.Vidas = Escape.vidas;
+        return View("habitacion" + Escape.GetEstadoJuego());
     }
     /*public IActionResult Incrementar()
     {

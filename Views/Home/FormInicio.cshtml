@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Formulario";
+}
+
+<div class="columnas">
+    <p><b>Ingresá tu nombre</b></p>
+    <form action='@Url.Action("GuardarDatos", "Home")'>
+        <input required type="text" name="nombre" placeholder=""> <br>
+        <p>Elegí el nivel de dificultad:</p>
+        <input required type="radio" name="nivel" value="facil">Fácil<br>
+        <input required type="radio" name="nivel" value="medio">Medio<br>
+        <input required type="radio" name="nivel" value="dificil">Difícil<br>       
+        <input class="btn btn-primary" type="submit" name="Enviar"> 
+        <input class="btn btn-secondary" type="reset" name="Resetear">
+    </form>
+</div>
+
