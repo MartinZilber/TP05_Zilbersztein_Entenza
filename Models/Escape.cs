@@ -8,8 +8,8 @@ class Escape
     static private int contadorIntentosHabitacion { get; set; } = 0;
     static private int contadorPistas { get; set; } = 0;
     static private int vidas {get;set;}
-    static private string nombre { get; set; }
     static private string nivel{get; set; }
+    static public string nombre { get; set; }
     
 
     public static void InicializarJuego()

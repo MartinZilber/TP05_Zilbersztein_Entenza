@@ -41,6 +41,11 @@ public class HomeController : Controller
     {
         return View("victoria");
     }
+    public IActionResult Derrota()
+    {
+        ViewBag.Nombre = Escape.nombre;
+        return View("derrota");
+    }
     public IActionResult Estadisticas()
     {
         int cantIntentosTotales = Escape.CalcularEstadisticas(); 
@@ -69,7 +74,7 @@ public class HomeController : Controller
             return View("habitacion" + (Escape.GetEstadoJuego()).ToString());
         }
         else
-        return View("derrota");
+        return RedirectToAction("derrota");
     }
     public IActionResult GuardarDatos(string nombre, string Nivel)
     {
