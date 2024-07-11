@@ -1,24 +1,22 @@
 @{
-    ViewData["Title"] = "Habitación 9";
+ViewData["Title"] = "Habitación 9";
 }
-<h1>Corrientes subterráneas</h1>
-<h3>LA HABITACIÓN INUNDADA</h3>
+<h1>Corrientes Subterráneas</h1>
+<h3>LA SALA DE ENSAYO</h3>
 <p>@ViewBag.Dato</p>
 <p>Vidas: @ViewBag.Vidas</p>
-<p>Al pasar por esta puerta, no te das cuenta y cerrás la puerta de la habitación anterior. El piso está inundado y al ver al frente ves a la hidra. No tenes forma de matarla entonces sabes que tenes que pasar a otra habitación y así sucesivamente con el fin de escapar. Sabes que no vas a poder hacer esto por toda la eternidad entonce tenes que pensar una solución.</p>
-<p>La hidra se acerca rápidamente. Debés acabar con ella. 
-Recordás que en la mitología griega la hidra tiene solo una debilidad que, en cierto modo, contradice su nombre. Sin embargo, necesitás conseguir aquel elemento. ¿Qué elemento necesitás?</p>
-<div class="columas">
-    <img src="/images/habitacion9.png">
-    <p><b>Ingresá tu respuesta:</b></p>
+<p>Habiendo salido de la sala de ensayo, </p>
+<div class="columnas">
+    <img src="/images/habitacion9.jpg">
+    <audio controls src="/audios/AudioHabitacion8.mp4">Audio</audio>
     <form action='@Url.Action("Habitacion", "Home")'>
-            <input type="hidden" name="sala" value=9>
-            <input autocomplete="off" type="descripcion" name="clave" placeholder="" required><br>
-            <input class="btn btn-primary" type="submit" name="Validar">
-            <input class="btn btn-secondary" type ="reset" name ="Resetear">
+        <input type="hidden" name="sala" value=9>
+        <input autocomplete="off" type="text" name="clave" placeholder="" required><br>
+        <input class="btn btn-primary" type="submit" name="Validar">
+        <input class="btn btn-secondary" type ="reset" name ="Resetear">
     </form>
     <div>
-        <button onclick="alert('¿De qué palabra viene Hidra?')">Pista 1</button>
-        <button onclick="alert('¿Qué puede apagar el elemento que viene de su nombre?')">Pista 2</button>
+        <button onclick="alert('¿Cuáles de los objetos pueden ser relacionados con juegos?')">Pista 1</button>
+        <button onclick="alert('Presta atención a los objetos de madera')">Pista 2</button>
     </div>
 </div>
