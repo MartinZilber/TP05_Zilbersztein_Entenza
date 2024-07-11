@@ -66,4 +66,8 @@ class Escape
     {
         return contadorIntentos;
     }
+    public static void Incrementar()
+    {
+        contadorPistas++;
+    }
 }

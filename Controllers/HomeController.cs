@@ -39,9 +39,13 @@ public class HomeController : Controller
     }
     public IActionResult Victoria()
     {
+        return View("victoria");
+    }
+    public IActionResult Estadisticas()
+    {
         int cantIntentosTotales = Escape.CalcularEstadisticas(); 
         ViewBag.contadorIntentos = cantIntentosTotales;
-        return View("victoria");
+        return View("estadisticas");
     }
     public IActionResult Comenzar()
     {
@@ -51,10 +55,11 @@ public class HomeController : Controller
     public IActionResult Habitacion(int sala, string clave)
     {
         bool esCorrecto = Escape.ResolverSala(sala, clave);
+        ViewBag.Vidas = Escape.GetVidas();
         if (esCorrecto)
         {            
             ViewBag.Dato = "";
-            if (Escape.GetEstadoJuego() >= 10)
+            if (Escape.GetEstadoJuego() >= 9)
             return View("victoria");
         }
         else
@@ -76,8 +81,7 @@ public class HomeController : Controller
     }
     /*public IActionResult Incrementar()
     {
-        Escape.contadorPistas++;
-        ViewBag.contadorPistas = "Cantidad de veces pistas pedidas: " + Escape.contadorPistas;
-        return View(Escape.estadoJuego + "habitacion");
+        Escape.Incrementar();
+        return View("habitacion" + Escape.GetEstadoJuego());
     }*/
 }
