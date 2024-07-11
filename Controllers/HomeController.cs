@@ -52,16 +52,18 @@ public class HomeController : Controller
     {
         bool esCorrecto = Escape.ResolverSala(sala, clave);
         if (esCorrecto)
-        {
+        {            
             ViewBag.Dato = "";
             if (Escape.GetEstadoJuego() >= 10)
             return View("victoria");
         }
-        else if (Escape.GetVidas() > 0)
-        {
+        else
             ViewBag.Dato = "Dato incorrecto";
+        if (Escape.GetVidas() > 0)
+        {
             return View("habitacion" + (Escape.GetEstadoJuego()).ToString());
         }
+        else
         return View("derrota");
     }
     public IActionResult GuardarDatos(string nombre, string Nivel)
@@ -69,6 +71,7 @@ public class HomeController : Controller
         ViewBag.Nombre = Escape.GuardarNombre(nombre);
         Escape.GuardarNivel(Nivel);
         ViewBag.Vidas = Escape.vidas;
+        Escape.InicializarJuego();
         return View("habitacion" + Escape.GetEstadoJuego());
     }
     /*public IActionResult Incrementar()
