@@ -7,7 +7,7 @@ class Escape
     static private int contadorIntentos { get; set; } = 0;
     static private int contadorIntentosHabitacion { get; set; } = 0;
     static private int contadorPistas { get; set; } = 0;
-    static public int vidas {get;set;}
+    static private int vidas {get;set;}
     static private string nombre { get; set; }
     static private string nivel{get; set; }
     

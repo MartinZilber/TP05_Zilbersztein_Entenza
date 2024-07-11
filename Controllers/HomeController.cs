@@ -75,8 +75,8 @@ public class HomeController : Controller
     {
         ViewBag.Nombre = Escape.GuardarNombre(nombre);
         Escape.GuardarNivel(Nivel);
-        ViewBag.Vidas = Escape.vidas;
         Escape.InicializarJuego();
+        ViewBag.Vidas = Escape.GetVidas();
         return View("habitacion" + Escape.GetEstadoJuego());
     }
     /*public IActionResult Incrementar()
