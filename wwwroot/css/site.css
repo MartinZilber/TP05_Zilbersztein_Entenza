@@ -19,7 +19,7 @@ html {
 
 body {
   margin-bottom: 60px;
-  background-color: #A39A7A;
+  background-color: #669999;
 }
 
 .paso{
@@ -32,7 +32,7 @@ img{
 }
 
 h1{
-  background-color: #575b28;
+  background-color: #164444;
   color: #E8E6DE;
   text-align: center;
 }
@@ -41,17 +41,18 @@ h3{
 }
 a{
   text-decoration: none;
-  color: #575b28;
+  color: #004141;
 }
 input{
   margin: 1%
 }
 p{
-  margin-top: 3%;
+  margin-top: 1%;
 }
 .menu{
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   margin-top: 3%;
 }
 
@@ -65,4 +66,13 @@ p{
 }
 form{
   margin-top: 1%;
+}
+button{
+  margin-top: 4%;
+  color:#ffffff;
+  background-color: #164444;
+  box-shadow: 0 0 5px #164444, 0 0 25px #164444;
+}
+button:hover {
+  box-shadow: 0 0 5px #164444, 0 0 25px #164444, 0 0 50px #164444;
 }
