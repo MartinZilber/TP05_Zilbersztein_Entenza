@@ -10,8 +10,8 @@ class Escape
     static private int vidas { get; set; }
     static private string nivel { get; set; }
     static public string nombre { get; set; }
-    static public int puntosPPTJugador { get; set; }
-    static public int puntosPPTBot { get; set; }
+    static public int puntosPPTJugador { get; set; } = 0;
+    static public int puntosPPTBot { get; set; } = 0;
 
 
     public static void InicializarJuego()
@@ -20,6 +20,8 @@ class Escape
         contadorIntentosHabitacion = 0;
         contadorPistas = 0;
         estadoJuego = 1;
+        puntosPPTBot = 0;
+        puntosPPTJugador = 0;
     }
     public static int GetEstadoJuego()
     {

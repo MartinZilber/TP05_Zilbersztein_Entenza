@@ -83,9 +83,11 @@ public class HomeController : Controller
         if (Escape.puntosPPTBot == 3)
         {
             ViewBag.Dato = "Perdiste la partida!";
+            Escape.puntosPPTBot = 0;
+            Escape.puntosPPTJugador = 0;
         }
         ViewBag.Vidas = Escape.GetVidas();
-        ViewBag.PuntosJugador = Escape.puntosPPTJugador;
+        ViewBag.PuntosJugador = Escape.puntosPPTJugador;     
         ViewBag.PuntosBot = Escape.puntosPPTBot;
         return View("habitacion" + Escape.GetEstadoJuego());
     }
