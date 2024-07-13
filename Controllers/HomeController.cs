@@ -44,6 +44,7 @@ public class HomeController : Controller
     public IActionResult Derrota()
     {
         ViewBag.Nombre = Escape.nombre;
+        ViewBag.Nivel = Escape.GetNivel();
         return View("derrota");
     }
     public IActionResult Estadisticas()
@@ -64,7 +65,7 @@ public class HomeController : Controller
         if (esCorrecto)
         {            
             ViewBag.Dato = "";
-            if (Escape.GetEstadoJuego() >= 9)
+            if (Escape.GetEstadoJuego() >= 10)
             return View("victoria");
         }
         else
@@ -76,12 +77,24 @@ public class HomeController : Controller
         else
         return RedirectToAction("derrota");
     }
+    public IActionResult ProcesarPPT(int sala, string jugada)
+    {
+        Escape.PiedraPapelTijera(sala, jugada);
+        if (Escape.puntosPPTBot == 3)
+        {
+            ViewBag.Dato = "Perdiste la partida!";
+        }
+        ViewBag.Vidas = Escape.GetVidas();
+        ViewBag.PuntosJugador = Escape.puntosPPTJugador;
+        ViewBag.PuntosBot = Escape.puntosPPTBot;
+        return View("habitacion" + Escape.GetEstadoJuego());
+    }
     public IActionResult GuardarDatos(string nombre, string Nivel)
     {
         ViewBag.Nombre = Escape.GuardarNombre(nombre);
         Escape.GuardarNivel(Nivel);
-        Escape.InicializarJuego();
         ViewBag.Vidas = Escape.GetVidas();
+        Escape.InicializarJuego();
         return View("habitacion" + Escape.GetEstadoJuego());
     }
     /*public IActionResult Incrementar()

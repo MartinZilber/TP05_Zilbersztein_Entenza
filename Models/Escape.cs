@@ -7,10 +7,12 @@ class Escape
     static private int contadorIntentos { get; set; } = 0;
     static private int contadorIntentosHabitacion { get; set; } = 0;
     static private int contadorPistas { get; set; } = 0;
-    static private int vidas {get;set;}
-    static private string nivel{get; set; }
+    static private int vidas { get; set; }
+    static private string nivel { get; set; }
     static public string nombre { get; set; }
-    
+    static public int puntosPPTJugador { get; set; }
+    static public int puntosPPTBot { get; set; }
+
 
     public static void InicializarJuego()
     {
@@ -27,6 +29,10 @@ class Escape
     {
         return vidas;
     }
+    public static string GetNivel()
+    {
+        return nivel;
+    }
     public static bool ResolverSala(int Sala, string Incognita)
     {
         bool esCorrecto = false;
@@ -37,7 +43,7 @@ class Escape
                 esCorrecto = true;
                 contadorIntentosHabitacion = 0;
                 if (estadoJuego < 9)
-                estadoJuego++;
+                    estadoJuego++;
             }
             else
             {
@@ -47,20 +53,48 @@ class Escape
         }
         return esCorrecto;
     }
+    public static void PiedraPapelTijera(int sala, string jugada)
+    {
+        string[] jugadas = { "piedra", "papel", "tijera" };
+        string jugadaBot;
+        if (sala == estadoJuego)
+        {
+            jugadaBot = jugadas[generarRandom(0, 2)];
+            if (jugada == "papel" && jugadaBot == "piedra" || jugada == "tijera" && jugadaBot == "papel" || jugada == "piedra" && jugadaBot == "tijera")
+            {
+                puntosPPTJugador++;
+                if (puntosPPTJugador == 3)
+                    estadoJuego++;
+            }
+            else if (jugada != jugadaBot)
+            {
+                puntosPPTBot++;
+                if (puntosPPTBot == 3)
+                    vidas--;
+            }
+        }
+    }
+    public static int generarRandom(int minimo, int maximo)
+    {
+        Random r = new Random();
+        int numero = r.Next(minimo, maximo);
+        return numero;
+    }
     public static string GuardarNombre(string Nombre)
     {
-        nombre = Nombre;
+        if (Nombre != null)
+            nombre = Nombre;
         return nombre;
     }
     public static void GuardarNivel(string Nivel)
     {
         nivel = Nivel;
         if (nivel == "facil")
-        vidas = 10;
+            vidas = 10;
         else if (nivel == "medio")
-        vidas = 5;
-        else
-        vidas = 3;
+            vidas = 5;
+        else if (nivel == "dificil")
+            vidas = 3;
     }
     public static int CalcularEstadisticas()
     {

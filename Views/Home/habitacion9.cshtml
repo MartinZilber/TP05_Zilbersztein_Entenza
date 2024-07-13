@@ -2,11 +2,22 @@
 ViewData["Title"] = "Habitación 9";
 }
 <h1>Corrientes Subterráneas</h1>
-<h3>LA SALA DE ENSAYO</h3>
+<h3>UN DESAFÍO EXTRAÑO</h3>
 <p>@ViewBag.Dato</p>
 <p>Vidas: @ViewBag.Vidas</p>
-<p>Habiendo salido de la sala de ensayo, </p>
-<div class="columnas">
+<p>Habiendo salido de la sala de ensayo, [FALTA UNA FOTO], ¡encontrás a la hidra! Y te propone jugar un juego en particular...</p>
+<h6>¡PIEDRA, PAPEL O TIJERA!</h6>
+<p>Jugarán hasta tres puntos. Si ganás, ¡podrás pasar de habitación! Si no, ¡perderás una vida!</p>
+<p><b>Ingresá tu jugada:</b></p>
+<form action='@Url.Action("ProcesarPPT", "Home")'>
+    <input type="hidden" name="sala" value="9">
+    <input type="text" name="jugada"><br>
+    <input class="btn btn-primary" type="submit" name="Validar">
+</form>
+<p>Tus puntos: @ViewBag.PuntosJugador</p>3
+<p>Puntos de la hidra: @ViewBag.PuntosBot</p>
+
+@* <div class="columnas">
     <img src="/images/habitacion9.jpg">
     <audio controls src="/audios/AudioHabitacion8.mp4">Audio</audio>
     <form action='@Url.Action("Habitacion", "Home")'>
@@ -19,4 +30,4 @@ ViewData["Title"] = "Habitación 9";
         <button onclick="alert('¿Cuáles de los objetos pueden ser relacionados con juegos?')">Pista 1</button>
         <button onclick="alert('Presta atención a los objetos de madera')">Pista 2</button>
     </div>
-</div>
+</div> *@
