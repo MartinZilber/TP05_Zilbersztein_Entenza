@@ -25,7 +25,7 @@ body {
 .paso{
   display: none; 
   transition: visibility 0s, opacity 0.5s linear; /*buscar transiciones de show/hide*/}
-#paso1{display: block;}
+#paso1{display: block;}/*TRANSICIÓN DE CONTENIDO EN LA MISMA VISTA*/
 
 h1{
   background-color: #164444;
