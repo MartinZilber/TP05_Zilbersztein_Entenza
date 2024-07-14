@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures.Buffers;
 
 class Escape
 {
-    static private string[] incognitasSalas { get; set; } = { "0", "10", "izquierda", "ramo", "almohadón", "rojo", "piratas", "para elisa", "fuego" };
+    static private string[] incognitasSalas { get; set; } = { "0", "10", "izquierda", "ramo", "almohadon", "rojo", "piratas", "para elisa", "fuego" };
     static private int estadoJuego { get; set; } = 1;
     static private int contadorIntentos { get; set; } = 0;
     static private int contadorIntentosHabitacion { get; set; } = 0;
@@ -55,26 +55,32 @@ class Escape
         }
         return esCorrecto;
     }
-    public static void PiedraPapelTijera(int sala, string jugada)
+    public static int PiedraPapelTijera(int sala, string jugada)
     {
         string[] jugadas = { "piedra", "papel", "tijera" };
         string jugadaBot;
+        int ganador = 0;
         if (sala == estadoJuego)
         {
             jugadaBot = jugadas[generarRandom(0, 2)];
             if (jugada == "papel" && jugadaBot == "piedra" || jugada == "tijera" && jugadaBot == "papel" || jugada == "piedra" && jugadaBot == "tijera")
             {
                 puntosPPTJugador++;
+                ganador = 1;
                 if (puntosPPTJugador == 3)
                     estadoJuego++;
             }
             else if (jugada != jugadaBot)
             {
                 puntosPPTBot++;
+                ganador = 2;
                 if (puntosPPTBot == 3)
                     vidas--;
             }
+            else
+                ganador = 3;
         }
+        return ganador;
     }
     public static int generarRandom(int minimo, int maximo)
     {
