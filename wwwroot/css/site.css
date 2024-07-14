@@ -98,7 +98,7 @@ width: 30%;
 
 .container {
   padding: 1%;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .slider-wrapper {
@@ -110,13 +110,16 @@ width: 30%;
 .slider{
   display: flex;
   aspect-ratio: 16 / 9;
-  overflow-x: hidden;
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   border-radius: 10px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
 .slider img {
+  width: 100%;
   flex: 0 0 100%;
   scroll-snap-align: start;
   object-fit: cover;
