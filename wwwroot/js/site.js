@@ -8,3 +8,14 @@ function mostrarpaso(paso)
     $(".paso").hide();
     $("#paso"+paso).fadeIn();
 }
+function definirTiempo(nivel){
+    if (nivel == facil) return 1;
+    if (nivel == medio) return 0,75;
+    else return 0,5;
+}
+
+
+function temporizador()
+{
+
+}

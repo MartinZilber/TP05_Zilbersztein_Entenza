@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TP05_Zilbersztein_Entenza.Models;
@@ -108,6 +109,7 @@ public class HomeController : Controller
         Escape.GuardarNivel(Nivel);
         ViewBag.Vidas = Escape.GetVidas();
         Escape.InicializarJuego();
+        
         return View("habitacion" + Escape.GetEstadoJuego());
     }
     /*public IActionResult Incrementar()
