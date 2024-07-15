@@ -38,6 +38,7 @@ class Escape
     public static bool ResolverSala(int Sala, string Incognita)
     {
         bool esCorrecto = false;
+        Incognita = Incognita.ToLower();
         if (Sala == estadoJuego)
         {
             if (Incognita == incognitasSalas[Sala - 1])
