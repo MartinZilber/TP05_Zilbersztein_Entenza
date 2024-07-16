@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TP05_Zilbersztein_Entenza.Models;
@@ -49,7 +50,7 @@ public class HomeController : Controller
     }
     public IActionResult Estadisticas()
     {
-        int cantIntentosTotales = Escape.CalcularEstadisticas(); 
+        int cantIntentosTotales = Escape.CalcularEstadisticas();
         ViewBag.contadorIntentos = cantIntentosTotales;
         return View("estadisticas");
     }
@@ -63,10 +64,15 @@ public class HomeController : Controller
         bool esCorrecto = Escape.ResolverSala(sala, clave);
         ViewBag.Vidas = Escape.GetVidas();
         if (esCorrecto)
-        {            
+        {
             ViewBag.Dato = "";
+            if (Escape.GetEstadoJuego() == 9)
+            {
+                ViewBag.PuntosJugador = Escape.puntosPPTJugador;
+                ViewBag.PuntosBot = Escape.puntosPPTBot;
+            }
             if (Escape.GetEstadoJuego() >= 10)
-            return View("victoria");
+                return View("victoria");
         }
         else
             ViewBag.Dato = "Dato incorrecto";
@@ -75,19 +81,25 @@ public class HomeController : Controller
             return View("habitacion" + (Escape.GetEstadoJuego()).ToString());
         }
         else
-        return RedirectToAction("derrota");
+            return RedirectToAction("derrota");
     }
     public IActionResult ProcesarPPT(int sala, string jugada)
     {
-        Escape.PiedraPapelTijera(sala, jugada);
+        int ganador = Escape.PiedraPapelTijera(sala, jugada);
         if (Escape.puntosPPTBot == 3)
         {
             ViewBag.Dato = "Perdiste la partida!";
             Escape.puntosPPTBot = 0;
             Escape.puntosPPTJugador = 0;
         }
+        else if (ganador == 1)
+        ViewBag.Ronda = "Ganaste la ronda!";
+        else if (ganador == 2)
+        ViewBag.Ronda = "Perdiste la ronda!";
+        else
+        ViewBag.Ronda = "Han empatado!";
         ViewBag.Vidas = Escape.GetVidas();
-        ViewBag.PuntosJugador = Escape.puntosPPTJugador;     
+        ViewBag.PuntosJugador = Escape.puntosPPTJugador;
         ViewBag.PuntosBot = Escape.puntosPPTBot;
         return View("habitacion" + Escape.GetEstadoJuego());
     }
@@ -97,6 +109,7 @@ public class HomeController : Controller
         Escape.GuardarNivel(Nivel);
         ViewBag.Vidas = Escape.GetVidas();
         Escape.InicializarJuego();
+        
         return View("habitacion" + Escape.GetEstadoJuego());
     }
     /*public IActionResult Incrementar()
