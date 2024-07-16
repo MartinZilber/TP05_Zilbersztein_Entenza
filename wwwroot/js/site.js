@@ -14,8 +14,20 @@ function definirTiempo(nivel){
     else return 0,5;
 }
 
-
+let cantSegundosRestantes = 10;
+let tiempoRestante = setInterval(temporizador, 1000);
 function temporizador()
 {
+    console.log("quedan " + cantSegundosRestantes + " segundos");
+    if (cantSegundosRestantes == 0)
+        clearInterval(tiempoRestante);
+    cantSegundosRestantes--;
+    
+} //Este es un temporizador que empieza en 10 y se detiene en 0. Debería ser usado para realizar uno de los extras.
 
-}
+//Modo oscuro
+let body = document.querySelector("body");
+let botonColor = document.querySelector(".tema");
+botonColor.addEventListener("click", ()=>{
+    body.classList.toggle("modo-oscuro");
+})

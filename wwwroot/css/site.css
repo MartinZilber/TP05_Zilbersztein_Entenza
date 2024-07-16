@@ -3,6 +3,7 @@ html {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 @media (min-width: 768px) {
   html {
@@ -24,7 +25,6 @@ body {
   background-color: #669999;
   font-family: 'Wittgenstein', sans-serif;
 }
-
 .paso{
   display: none; 
   transition: visibility 0s, opacity 0.5s linear; /*buscar transiciones de show/hide*/}
@@ -143,3 +143,20 @@ width: 30%;
   opacity: 0.75;
   transition: opacity ease 250ms;
 }
+
+/* Cambio de íconos entre claro y oscuro. Hasta ahora solamente investigué
+cómo hacerlo como si estuviera en el header, porque apareeeeeentemente hay
+bastantes páginas que los usan así. A mí no me gusta, pero habría que buscar
+de otra forma. */
+body.modo-oscuro .sun{
+  display:block;
+}
+body .sun{
+  display:none;
+}
+body.modo-oscuro .moon{
+  display:none;
+}
+body .tema:hover{
+  cursor:pointer;
+} 

@@ -42,6 +42,10 @@ public class HomeController : Controller
     {
         return View("victoria");
     }
+    public IActionResult Ajustes()
+    {
+        return View("Ajustes");
+    }
     public IActionResult Derrota()
     {
         ViewBag.Nombre = Escape.nombre;
