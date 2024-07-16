@@ -5,10 +5,10 @@
 <h3>LA MANSIÓN DE PIEDRA</h3>
 <p>@ViewBag.Dato</p>
 <p>Al salir del patio, entrás en una gran mansión. La situación comienza a desconcertarte: ¿todo lo que existe se puede encontrar aquí? 
-Hallás una nota: “La oveja negra de la familia es la salvación de esta misma”. ¿Qué objeto es ligeramente diferente a sus pares?
+Hallás una nota: “La oveja negra de la familia es la salvación de esta misma”. ¿Qué objeto es ligeramente diferente a sus pares? Recorda utilizar tildes en caso de necesitarlas.
 </p>
 <div class="columnas">
-    <img src="/images/habitacion5.png">
+    <img src="/images/habitacion5.jpg">
     <p>Vidas: @ViewBag.Vidas</p>
     <p><b>Ingresá tu respuesta:</b></p>
     <form action='@Url.Action("Habitacion", "Home")'>
@@ -18,7 +18,7 @@ Hallás una nota: “La oveja negra de la familia es la salvación de esta misma
         <input class="btn btn-secondary" type ="reset" name ="Resetear">
     </form>
     <div>
-        <button onclick="alert('Buscá objetos alineados.')">Pista 1</button>
+        <button onclick="alert('Buscá objetos del mismo tipo (por ejemplo puertas).')">Pista 1</button>
         <button onclick="alert('El negro no es un color.')">Pista 2</button>
     </div>
 </div>

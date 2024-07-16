@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures.Buffers;
 
 class Escape
 {
-    static private string[] incognitasSalas { get; set; } = { "0", "10", "izquierda", "ramo", "almohada", "rojo", "piratas", "para elisa", "fuego" };
+    static private string[] incognitasSalas { get; set; } = { "0", "10", "izquierda", "ramo", "almohadón", "rojo", "piratas", "para elisa", "fuego" };
     static private int estadoJuego { get; set; } = 1;
     static private int contadorIntentos { get; set; } = 0;
     static private int contadorIntentosHabitacion { get; set; } = 0;
