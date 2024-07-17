@@ -80,6 +80,9 @@ button{
 button:hover {
   box-shadow: 0 0 5px #164444, 0 0 25px #164444, 0 0 50px #164444;
 }
+button-mostrada{
+  display:block;
+}
 
 .logo {
   margin-left: 5%;
