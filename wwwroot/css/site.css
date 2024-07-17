@@ -50,7 +50,6 @@ input{
 }
 p{
   margin-top: 1%;
-  
 }
 .menu{
   display: flex;
@@ -80,9 +79,10 @@ button{
 button:hover {
   box-shadow: 0 0 5px #164444, 0 0 25px #164444, 0 0 50px #164444;
 }
-button-mostrada{
-  display:block;
+.contenedorPistas p{
+  display:none;
 }
+
 
 .creditos{
   display: flex;
