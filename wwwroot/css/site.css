@@ -84,11 +84,6 @@ button-mostrada{
   display:block;
 }
 
-.logo {
-  margin-left: 5%;
-  width: 18.5%;
-}
-
 .creditos{
   display: flex;
   justify-content: center;
@@ -146,6 +141,7 @@ width: 30%;
   opacity: 0.75;
   transition: opacity ease 250ms;
 }
+
 
 /* Cambio de íconos entre claro y oscuro. Hasta ahora solamente investigué
 cómo hacerlo como si estuviera en el header, porque apareeeeeentemente hay

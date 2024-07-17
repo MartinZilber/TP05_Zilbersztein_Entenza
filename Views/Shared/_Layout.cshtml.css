@@ -36,9 +36,18 @@ a {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
+.headerstyles .logo{
+  width: 100px;
+}
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .footer {
