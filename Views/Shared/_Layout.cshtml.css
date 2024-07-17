@@ -50,6 +50,10 @@ button.accept-policy {
   justify-content: space-around;
 }
 
+.bcolor {
+  background-color: #ecf8f8;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
