@@ -1,22 +1,30 @@
 @{
 ViewData["Title"] = "Habitación 9";
 }
-<h1>Corrientes Subterráneas</h1>
-<h3>UN DESAFÍO EXTRAÑO</h3>
-<p>@ViewBag.Dato</p>
-<p>Vidas: @ViewBag.Vidas</p>
-<p>Habiendo salido de la sala de ensayo, [FALTA UNA FOTO], ¡encontrás a la hidra! Y te propone jugar un juego en particular...</p>
-<h6>¡PIEDRA, PAPEL O TIJERA!</h6>
-<p>Jugarán hasta tres puntos. Si ganás, ¡podrás pasar de habitación! Si no, ¡perderás una vida!</p>
-<p><b>Ingresá tu jugada:</b></p>
-<form action='@Url.Action("ProcesarPPT", "Home")'>
-    <input type="hidden" name="sala" value="9">
-    <input type="text" name="jugada"><br>
-    <input class="btn btn-primary" type="submit" name="Validar">
-</form>
-<p>@ViewBag.Ronda</p>
-<p>Tus puntos: @ViewBag.PuntosJugador</p>
-<p>Puntos de la hidra: @ViewBag.PuntosBot</p>
+<head>
+
+
+</head>
+<body>
+    <h1>Corrientes Subterráneas</h1>
+    <h3>UN DESAFÍO EXTRAÑO</h3>
+    <p>@ViewBag.Dato</p>
+    <p>Vidas: @ViewBag.Vidas</p>
+    <p>Habiendo salido de la sala de ensayo, [FALTA UNA FOTO], ¡encontrás a la hidra! Y te propone jugar un juego en particular...</p>
+    <h6>¡PIEDRA, PAPEL O TIJERA!</h6>
+    <p>Jugarán hasta tres puntos. Si ganás, ¡podrás pasar de habitación! Si no, ¡perderás una vida!</p>
+    <p><b>Ingresá tu jugada:</b></p>
+    <form id="PPT" action='@Url.Action("ProcesarPPT", "Home")'>
+        <input type="hidden" name="sala" value="9">
+        <input id="jugada" type="text" name="jugada"><br>
+        <input class="btn btn-primary" type="submit" name="Validar">
+    </form>
+    <p id="jugadaInvalida"></p>
+    <p>@ViewBag.Ronda</p>
+    <p>Tus puntos: @ViewBag.PuntosJugador</p>
+    <p>Puntos de la hidra: @ViewBag.PuntosBot</p>
+</body>
+
 
 @* <div class="columnas">
     <img src="/images/habitacion9.jpg">

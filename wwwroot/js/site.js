@@ -41,4 +41,24 @@ function definirTiempo(nivel){
         });
     });
  });
+ document.addEventListener("DOMContentLoaded", function() {
+    const claves = ["piedra", "papel", "tijera"];
+    const formulario = document.getElementById("PPT");
+    const jugada = document.getElementById("jugada");
+    let jugadaNoValida = document.getElementById("jugadaInvalida");
+
+    formulario.addEventListener("submit", function(event) {
+        const inputValue = jugada.value.trim();
+        if (!claves.includes(inputValue)) {
+            event.preventDefault();
+            jugadaNoValida.textContent = "Jugada no válida. Por favor ingrese 'piedra', 'papel' o 'tijera'";
+        }
+        else
+        jugadaNoValida.textContent = "";
+    });
+});
+
+
+
+
 
