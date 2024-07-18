@@ -97,11 +97,13 @@ public class HomeController : Controller
             Escape.puntosPPTJugador = 0;
         }
         else if (ganador == 1)
-        ViewBag.Ronda = "Ganaste la ronda!";
+        ViewBag.Ronda = "¡Ganaste la ronda!";
         else if (ganador == 2)
-        ViewBag.Ronda = "Perdiste la ronda!";
-        else
-        ViewBag.Ronda = "Han empatado!";
+        ViewBag.Ronda = "¡Perdiste la ronda!";
+        else if (ganador == 3)
+        ViewBag.Ronda = "¡Han empatado!";
+        else 
+        ViewBag.Ronda = "¡Ingresaste mal la jugada!";
         ViewBag.Vidas = Escape.GetVidas();
         ViewBag.PuntosJugador = Escape.puntosPPTJugador;
         ViewBag.PuntosBot = Escape.puntosPPTBot;

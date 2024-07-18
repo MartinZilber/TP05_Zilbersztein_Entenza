@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures.Buffers;
 class Escape
 {
 
-    static private string[] incognitasSalas { get; set; } = { "0", "n", "izquierda", "ramo", "almohadon", "rojo", "piratas", "para elisa", "fuego" };
+    static private string[] incognitasSalas { get; set; } = { "0", "cartel", "izquierda", "ramo", "almohadon", "rojo", "piratas", "para elisa", "", "fuego" };
 
     static private int estadoJuego { get; set; } = 1;
     static private int contadorIntentos { get; set; } = 0;
@@ -80,8 +80,10 @@ class Escape
                 if (puntosPPTBot == 3)
                     vidas--;
             }
-            else
+            else if (jugada == jugadaBot)
                 ganador = 3;
+            else
+                ganador = 4;
         }
         return ganador;
     }
