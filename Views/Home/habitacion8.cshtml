@@ -7,8 +7,9 @@ ViewData["Title"] = "Habitación 8";
 <p>Vidas: @ViewBag.Vidas</p>
 <p>Entras a una sala que parece ser una sala de ensayo. Allí ves un piano, sin embargo notas que las teclas se encuentran viejas y al toca una tecla te extraña escuchar una canción en guitarra eléctrica. ¿Qué canción es?</p>
 <div class="columnas">
-    <img src="/images/habitacion8.jpg">
+    <img src="/images/habitacion8.jpg"> 
     <audio controls src="/audios/AudioHabitacion8.mp4">Audio</audio>
+ 
     <form action='@Url.Action("Habitacion", "Home")'>
         <input type="hidden" name="sala" value=8>
         <input autocomplete="off" type="text" name="clave" placeholder="" required><br>

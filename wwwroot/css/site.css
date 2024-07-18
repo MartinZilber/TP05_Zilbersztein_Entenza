@@ -63,6 +63,7 @@ p{
   flex-direction: column;
   align-items: center;
 }
+
 .columnas div{
   margin-top: 1%; 
 }
@@ -70,8 +71,8 @@ form{
   margin-top: 1%;
 }
 button{
-  margin-top: 3%;
-  margin-bottom: 3%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   color:#ffffff;
   background-color: #164444;
   box-shadow: 0 0 5px #164444, 0 0 25px #164444;
@@ -141,7 +142,9 @@ width: 30%;
   transition: opacity ease 250ms;
 }
 
-
+audio{
+  margin-top: 2%;
+}
 /* Cambio de íconos entre claro y oscuro. Hasta ahora solamente investigué
 cómo hacerlo como si estuviera en el header, porque apareeeeeentemente hay
 bastantes páginas que los usan así. A mí no me gusta, pero habría que buscar
