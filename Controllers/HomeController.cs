@@ -54,8 +54,8 @@ public class HomeController : Controller
     }
     public IActionResult Estadisticas()
     {
-        int cantIntentosTotales = Escape.CalcularEstadisticas();
-        ViewBag.contadorIntentos = cantIntentosTotales;
+        int cantidadIntentosTotales = Escape.CalcularEstadisticas();
+        ViewBag.contadorIntentos = cantidadIntentosTotales;
         return View("estadisticas");
     }
     public IActionResult Comenzar()
@@ -79,7 +79,9 @@ public class HomeController : Controller
                 return View("victoria");
         }
         else
-            ViewBag.Dato = "Dato incorrecto";
+            {
+                ViewBag.Dato = "Dato incorrecto";
+            }
         if (Escape.GetVidas() > 0)
         {
             return View("habitacion" + (Escape.GetEstadoJuego()).ToString());
