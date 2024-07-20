@@ -33,6 +33,8 @@ function definirTiempo(nivel){
 //   }) //ESTO ESTÁ COMENTADO PORQUE TIENE QUE APARECER EN CADA VIEW PARA QUE NO SALTE ERROR
 
 
+
+
  document.addEventListener("DOMContentLoaded", function() {
     let pistas = document.querySelectorAll(".boton");
     pistas.forEach(function(pista) {
@@ -40,7 +42,9 @@ function definirTiempo(nivel){
            this.classList.add("mostrada");
         });
     });
- });
+ });//Cuándo una pista fue solicitada
+ 
+ 
  document.addEventListener("DOMContentLoaded", function() {
     const claves = ["piedra", "papel", "tijera"];
     const formulario = document.getElementById("PPT");
