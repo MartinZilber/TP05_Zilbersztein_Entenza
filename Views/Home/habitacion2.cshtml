@@ -1,10 +1,15 @@
 @{
     ViewData["Title"] = "Home Page";
+    int vidas = ViewBag.Vidas;
 }
 <h1>Corrientes subterráneas</h1>
 
 <h3>EL PASILLO SIN FIN</h3>
-    <p>Vidas: @ViewBag.Vidas</p>
+<div>
+    <p><b>Vidas restantes:</b></p>
+    @for (int i = 0; i < vidas; i++){
+    <img class="corazon" src="/images/Corazon.png">
+}
     <p>Al salir del subte, encontrás un extenso pasillo con muchas puertas, tanto abiertas como cerradas. Al final de este, ves una pequeña pantalla en la que podés poner el código para pasar a la siguiente habitación. Sin embargo, no sabés cuál es.</p>
     <p>Hay dos imágenes en una pared. Aparentemente son iguales, pero... ¿cuáles son sus diferencias? Escribilas separadas con comas y espacios entre  en caso de que haya más de una.</p>
     <div class="columnas">

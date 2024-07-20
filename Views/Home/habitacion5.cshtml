@@ -1,8 +1,14 @@
 @{
     ViewData["Title"] = "Habitación 5";
+    int vidas = ViewBag.Vidas;
 } 
 <h1>Corrientes subterráneas</h1>
 <h3>LA MANSIÓN DE PIEDRA</h3>
+<div>
+    <p><b>Vidas restantes:</b></p>
+    @for (int i = 0; i < vidas; i++){
+    <img class="corazon" src="/images/Corazon.png">
+}
 <p>@ViewBag.Dato</p>
 <p>Al salir del patio, entrás en una gran mansión. La situación comienza a desconcertarte: ¿todo lo que existe se puede encontrar aquí? 
 Hallás una nota: “La oveja negra de la familia es la salvación de esta misma”. ¿Qué objeto es ligeramente diferente a sus pares? Recorda utilizar tildes en caso de necesitarlas.

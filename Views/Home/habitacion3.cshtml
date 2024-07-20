@@ -1,11 +1,16 @@
 @{
     ViewData["Title"] = "Home Page";
+    int vidas = ViewBag.Vidas;
 }
 <h1>Corrientes subterráneas</h1>
 
 <h3>LA HABITACIÓN INFINITA</h3>
     <p>@ViewBag.Dato</p>
-    <p>Vidas: @ViewBag.Vidas</p>
+   <div>
+    <p><b>Vidas restantes:</b></p>
+    @for (int i = 0; i < vidas; i++){
+    <img class="corazon" src="/images/Corazon.png">
+    }
     <p>Habiendo salido del gran pasillo, corrés con la esperanza de encontrar unas escaleras para llegar al Abasto y, con suerte, encontrar personas.
     Al entrar, ves un espacio amplio. No conseguís vislumbrar su final. Buscás ayuda pero no encontras a nadie.
     </p>

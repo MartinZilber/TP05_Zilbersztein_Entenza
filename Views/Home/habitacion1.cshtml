@@ -1,5 +1,6 @@
 @{
     ViewData["Title"] = "Home Page";
+    int vidas = ViewBag.Vidas;
 }
 <head>
     <script src="~/js/site.js"></script>@*Conexión con el archivo de JavaScript*@
@@ -18,7 +19,12 @@
 </div>
 <div id="paso2" class="paso">
     <p>@ViewBag.Dato</p>
-    <p>Vidas: @ViewBag.Vidas</p>
+<div>
+    <p><b>Vidas restantes:</b></p>
+    @for (int i = 0; i < vidas; i++){
+    <img class="corazon" src="/images/Corazon.png">
+}
+</div>
     <p>Esto ya te resultó extraño, sin embargo al ver dentro del transporte no ves a una sola persona.
         Repentinamente, te sentis demasiado cansado y al estar todos los asientos libres no tenes mejor idea que dormir.
         Al despertarte, notas que el vehículo está detenido en la estación Carlos Gardel y temes por la hora y pensas en

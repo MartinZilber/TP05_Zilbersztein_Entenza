@@ -1,10 +1,15 @@
 @{
     ViewData["Title"] = "Habitación 6";
+    int vidas = ViewBag.Vidas;
 } 
 <h1>Corrientes subterráneas</h1>
 <h3>EL ASCENSOR REDENTOR</h3>
 <p>@ViewBag.Dato</p>
-<p>Vidas: @ViewBag.Vidas</p>
+<div>
+    <p><b>Vidas restantes:</b></p>
+    @for (int i = 0; i < vidas; i++){
+    <img class="corazon" src="/images/Corazon.png">
+}
 <p>Habiendo abierto la puerta de la mansión, entrás a un ascensor. Luego de apretar el botón del piso más alto para huir de la hidra, la entrada se cierra y quedás atrapado. Se escucha una alarma sonando, como si hubiera un incendio. De un parlante proviene la frase “el color de la emergencia salva vidas”. ¿De qué color es el botón que tenés que apretar para recibir ayuda?
 </p>
 <div class="columnas">

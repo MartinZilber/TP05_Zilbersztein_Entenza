@@ -1,10 +1,15 @@
 @{
 ViewData["Title"] = "Habitación 8";
+int vidas = ViewBag.Vidas;
 }
 <h1>Corrientes Subterráneas</h1>
 <h3>LA SALA DE ENSAYO</h3>
 <p>@ViewBag.Dato</p>
-<p>Vidas: @ViewBag.Vidas</p>
+<div>
+    <p><b>Vidas restantes:</b></p>
+    @for (int i = 0; i < vidas; i++){
+    <img class="corazon" src="/images/Corazon.png">
+}
 <p>Entras a una sala que parece ser una sala de ensayo. Allí ves un piano, sin embargo notas que las teclas se encuentran viejas y al toca una tecla te extraña escuchar una canción en guitarra eléctrica. ¿Qué canción es?</p>
 <div class="columnas">
     <img src="/images/habitacion8.jpg"> 

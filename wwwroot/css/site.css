@@ -84,7 +84,9 @@ button:hover {
   display:none;
 }
 
-
+.corazon{
+  width: 2%;
+}
 .creditos{
   display: flex;
   justify-content: center;

@@ -1,5 +1,6 @@
 @{
 ViewData["Title"] = "Habitación 9";
+int vidas = ViewBag.Vidas;
 }
 <head>
 
@@ -9,7 +10,11 @@ ViewData["Title"] = "Habitación 9";
     <h1>Corrientes Subterráneas</h1>
     <h3>UN DESAFÍO EXTRAÑO</h3>
     <p>@ViewBag.Dato</p>
-    <p>Vidas: @ViewBag.Vidas</p>
+    <div>
+    <p><b>Vidas restantes:</b></p>
+    @for (int i = 0; i < vidas; i++){
+    <img class="corazon" src="/images/Corazon.png">
+    }
     <p>Habiendo salido de la sala de ensayo, [FALTA UNA FOTO], ¡encontrás a la hidra! Y te propone jugar un juego en particular...</p>
     <h6>¡PIEDRA, PAPEL O TIJERA!</h6>
     <p>Jugarán hasta tres puntos. Si ganás, ¡podrás pasar de habitación! Si no, ¡perderás una vida!</p>

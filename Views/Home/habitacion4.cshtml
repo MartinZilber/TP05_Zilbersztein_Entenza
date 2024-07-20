@@ -1,8 +1,14 @@
 @{
     ViewData["Title"] = "Habitación 4";
+    int vidas = ViewBag.Vidas;
 } 
 <h1>Corrientes subterráneas</h1>
 <h3>EL PATIO DESCUIDADO</h3>
+<div>
+    <p><b>Vidas restantes:</b></p>
+    @for (int i = 0; i < vidas; i++){
+    <img class="corazon" src="/images/Corazon.png">
+}
 <p>@ViewBag.Dato</p>
 <p>Al salir de la habitación gigante, llegás a un pequeño patio que parece haber sido deslumbrante y brillante en un pasado; pero que ahora solo tiene una pileta, dos objetos misteriosos y unos descuidados yuyos.
 Intentás salir del patio, pero no podés: hay una barrera invisible que te mantiene adentro.
