@@ -1,23 +1,23 @@
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "login";
 }
 <div class="iniciarSesion">
     <h1>Iniciar sesión</h1>
-    <form method="post">
+    <form method="post" action='@Url.Action("Login", "Home")'>
         <div class="username">
-            <input type="text" required>
-            <label>Nombre de usuario</label>
+            <label><b>Nombre de usuario:</b></label>
+            <input type="text" required>    
         </div>
         <div class="contraseña">
+            <label><b>Contraseña:</b></label> 
             <input type="password" required>
-            <label>Contraseña</label>
         </div>
         <div class="recuperar">
             Olvidé mi contraseña
-        </div>
-        <input type="submit" value="iniciar">
+        </div>        
+        <input type="submit" value="Iniciar Sesión">
         <div class="Registrarse">
-            <a href="#"
+            <a href='@Url.Action("registrarse","Home")'>Crear una cuenta</a>
         </div>
     </form>
 </div>
