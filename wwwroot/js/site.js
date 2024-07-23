@@ -62,6 +62,11 @@ function definirTiempo(nivel){
     });
 });
 
+//Animaciones de cambio de páginas
+
+
+
+
 
 
 
