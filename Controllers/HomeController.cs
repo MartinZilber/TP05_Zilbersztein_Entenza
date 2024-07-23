@@ -125,11 +125,11 @@ public class HomeController : Controller
         Escape.Incrementar();
         return View("habitacion" + Escape.GetEstadoJuego());
     }*/
-        public IActionResult Login()
+    public IActionResult Login()
     {
         return View("login");
     }
-            public IActionResult Registrarse()
+    public IActionResult Registrarse()
     {
         return View("registrarse");
     }
