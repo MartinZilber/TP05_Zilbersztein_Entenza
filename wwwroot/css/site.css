@@ -168,12 +168,18 @@ body .tema:hover{
   cursor:pointer;
 } 
 
+<<<<<<< Updated upstream
 .iniciarSesion {
   margin-left: 25%;
+=======
+ .iniciarSesion {
+  margin-left: 21%;
+>>>>>>> Stashed changes
   width: 60%;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   margin-bottom: 3%;
+
 }
 
 .iniciarSesion form {
