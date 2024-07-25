@@ -39,7 +39,8 @@ function definirTiempo(nivel){
     let pistas = document.querySelectorAll(".boton");
     pistas.forEach(function(pista) {
         pista.addEventListener("click", function() {
-           this.classList.add("mostrada");
+            pista.classList.remove('boton');
+            pista.classList.add('boton-mostrada');
         });
     });
  });//Cuándo una pista fue solicitada

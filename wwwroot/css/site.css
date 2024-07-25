@@ -84,6 +84,9 @@ button:hover {
 .contenedorPistas p{
   display:none;
 }
+.contenedorPistas .boton-mostrada p{
+  display:block;
+}
 
 .corazon{
   width: 2%;
