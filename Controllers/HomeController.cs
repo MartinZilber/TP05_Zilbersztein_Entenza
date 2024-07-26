@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
 using TP05_Zilbersztein_Entenza.Models;
 
 namespace TP05_Zilbersztein_Entenza.Controllers;
@@ -60,8 +61,15 @@ public class HomeController : Controller
     }
     public IActionResult Comenzar()
     {
-        Escape.InicializarJuego();
-        return View("FormInicio"); //que sala
+        if (Escape.GetSesionIniciada()) 
+        {
+            Escape.InicializarJuego();
+            return View("FormInicio");
+        }//que sala
+        else if (Escape.nombre != "")
+        return View("login");
+        else
+        return View("registrarse");
     }
     public IActionResult Habitacion(int sala, string clave)
     {
@@ -79,9 +87,9 @@ public class HomeController : Controller
                 return View("victoria");
         }
         else
-            {
-                ViewBag.Dato = "Dato incorrecto";
-            }
+        {
+            ViewBag.Dato = "Dato incorrecto";
+        }
         if (Escape.GetVidas() > 0)
         {
             return View("habitacion" + (Escape.GetEstadoJuego()).ToString());
@@ -99,13 +107,13 @@ public class HomeController : Controller
             Escape.puntosPPTJugador = 0;
         }
         else if (ganador == 1)
-        ViewBag.Ronda = "¡Ganaste la ronda!";
+            ViewBag.Ronda = "¡Ganaste la ronda!";
         else if (ganador == 2)
-        ViewBag.Ronda = "¡Perdiste la ronda!";
+            ViewBag.Ronda = "¡Perdiste la ronda!";
         else if (ganador == 3)
-        ViewBag.Ronda = "¡Han empatado!";
-        else 
-        ViewBag.Ronda = "¡Ingresaste mal la jugada!";
+            ViewBag.Ronda = "¡Han empatado!";
+        else
+            ViewBag.Ronda = "¡Ingresaste mal la jugada!";
         ViewBag.Vidas = Escape.GetVidas();
         ViewBag.PuntosJugador = Escape.puntosPPTJugador;
         ViewBag.PuntosBot = Escape.puntosPPTBot;
@@ -117,7 +125,6 @@ public class HomeController : Controller
         Escape.GuardarNivel(Nivel);
         ViewBag.Vidas = Escape.GetVidas();
         Escape.InicializarJuego();
-        
         return View("habitacion" + Escape.GetEstadoJuego());
     }
     /*public IActionResult Incrementar()
@@ -125,23 +132,31 @@ public class HomeController : Controller
         Escape.Incrementar();
         return View("habitacion" + Escape.GetEstadoJuego());
     }*/
-<<<<<<< Updated upstream
     public IActionResult Login()
     {
+        if (Escape.intentosInicioSesion > 0)
+        ViewBag.MensajeError = "Uno de los datos es incorrecto";
+        ViewBag.Nombre = Escape.nombre;
         return View("login");
     }
     public IActionResult Registrarse()
-=======
-     public IActionResult Login()
-    {
-        return View("login");
-    }
-     public IActionResult Registrarse()
->>>>>>> Stashed changes
     {
         return View("registrarse");
     }
-         public IActionResult pasar()
+    public IActionResult GuardarDatosUsuario(string nombre, string contraseña)
+    {
+        Escape.GuardarDatosUsuario(nombre, contraseña);
+        return View("login");
+    }
+    public IActionResult ValidarInicioSesion(string Nombre, string Contraseña)
+    {
+        bool seInicioSesion = Escape.ValidarDatosUsuario(Nombre, Contraseña);
+        if (seInicioSesion)
+        return View("index");
+        else
+        return View("login");
+    }
+    public IActionResult pasar()
     {
         return View("pasar");
     }
