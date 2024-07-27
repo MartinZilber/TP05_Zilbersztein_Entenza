@@ -125,19 +125,12 @@ public class HomeController : Controller
         Escape.Incrementar();
         return View("habitacion" + Escape.GetEstadoJuego());
     }*/
-<<<<<<< Updated upstream
-    public IActionResult Login()
-    {
-        return View("login");
-    }
-    public IActionResult Registrarse()
-=======
+
      public IActionResult Login()
     {
         return View("login");
     }
      public IActionResult Registrarse()
->>>>>>> Stashed changes
     {
         return View("registrarse");
     }

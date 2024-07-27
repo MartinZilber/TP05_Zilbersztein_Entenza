@@ -81,6 +81,7 @@ button{
 button:hover {
   box-shadow: 0 0 5px #164444, 0 0 25px #164444, 0 0 50px #164444;
 }
+
 .contenedorPistas p{
   display:none;
 }
@@ -168,13 +169,8 @@ body .tema:hover{
   cursor:pointer;
 } 
 
-<<<<<<< Updated upstream
-.iniciarSesion {
-  margin-left: 25%;
-=======
  .iniciarSesion {
   margin-left: 21%;
->>>>>>> Stashed changes
   width: 60%;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
