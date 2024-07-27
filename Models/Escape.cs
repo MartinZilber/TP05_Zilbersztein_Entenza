@@ -4,18 +4,36 @@ class Escape
 {
 
     static private string[] incognitasSalas { get; set; } = { "0", "cartel", "izquierda", "ramo", "almohadon", "infoesgenial", "piratas", "para elisa", "", "fuego" };
-
     static private int estadoJuego { get; set; } = 1;
     static private int contadorIntentos { get; set; } = 1;
     static private int contadorIntentosHabitacion { get; set; } = 1;
     static private int contadorPistas { get; set; } = 0;
     static private int vidas { get; set; }
     static private string nivel { get; set; }
-    static public string nombre { get; set; }
+    static public string nombre { get; set; } = "";
+    static private string contraseña { get; set; } = "";
     static public int puntosPPTJugador { get; set; } = 0;
     static public int puntosPPTBot { get; set; } = 0;
+    static private bool sesionIniciada { get; set; } = false;
+    static public int intentosInicioSesion { get; set; } = 0;
 
 
+    public static void GuardarDatosUsuario(string Nombre, string Contraseña)
+    {
+        nombre = Nombre;
+        contraseña = Contraseña;
+    }
+    public static bool ValidarDatosUsuario(string Nombre, string Contraseña)
+    {
+        if (nombre == Nombre && contraseña == Contraseña)
+            sesionIniciada = true;
+        else
+        {
+            intentosInicioSesion++;
+            sesionIniciada = false;
+        }
+        return sesionIniciada;
+    }
     public static void InicializarJuego()
     {
         contadorIntentos = 0;
@@ -37,6 +55,11 @@ class Escape
     {
         return nivel;
     }
+    public static bool GetSesionIniciada()
+    {
+        return sesionIniciada;
+    }
+
     public static bool ResolverSala(int Sala, string Incognita)
     {
         bool esCorrecto = false;
