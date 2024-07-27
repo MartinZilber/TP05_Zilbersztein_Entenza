@@ -92,11 +92,15 @@ button:hover {
 .corazon{
   width: 2%;
 }
-.creditos{
+.gif{
   display: flex;
   justify-content: center;
   margin-top: 2%;
   margin-bottom: 2%;
+}
+
+.gif img {
+  width: 20%;
 }
 .creditos img{
 width: 30%;
@@ -232,8 +236,9 @@ input[type="submit"]{
   text-decoration: underline;
 } 
 
-
-
-
-
-
+.credito {
+  display: flex;
+  align-items: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
