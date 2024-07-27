@@ -4,13 +4,13 @@ int vidas = ViewBag.Vidas;
 }
 <h1>Corrientes Subterráneas</h1>
 <h3>LA SALA DE ENSAYO</h3>
-<p>@ViewBag.Dato</p>
+<p class="mensajeIncorrecto">@ViewBag.Dato</p>
 <div>
     <p><b>Vidas restantes:</b></p>
     @for (int i = 0; i < vidas; i++){
     <img class="corazon" src="/images/Corazon.png">
 }
-<p>Entras a una sala que parece ser una sala de ensayo. Allí ves un piano, sin embargo notas que las teclas se encuentran viejas y al toca una tecla te extraña escuchar una canción en guitarra eléctrica. ¿Qué canción es?</p>
+<p>Al recordar el juego, las puertas del armario se abren, por lo que, ya inclusive entretenido por lo que está ocurriendo, decidís continuar. Entrás a una sala que parece ser una sala de ensayo. Allí ves un piano, cuyas teclas ya son viejas y, al tocar una, te extraña escuchar una canción tocada en guitarra eléctrica. ¿Qué canción es?</p>
 <div class="columnas">
     <img src="/images/habitacion8.jpg"> 
     <audio controls src="/audios/AudioHabitacion8.mp4">Audio</audio>

@@ -3,10 +3,7 @@
 }
 <div class="iniciarSesion">
     <h1>Iniciar sesión</h1>
-    @ViewBag.MensajeError
-    @ViewBag.Nombre
-    <p>Para disfrutar plenamente de nuestra experiencia, es necesario que inicies sesión.</p>
-    <form method="post" action='@Url.Action("ValidarInicioSesion", "Home")'>
+    <form method="post" action='@Url.Action("index", "Home")'>
         <div class="username">
             <label><b>Nombre de usuario:</b></label>
             <input type="text" required>    

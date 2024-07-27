@@ -58,6 +58,14 @@ p{
   align-items: center;
   margin-top: 3%;
 }
+.mensajeIncorrecto{
+  width:9%;
+  background-color:red;
+}
+.ronda{
+  width:11%;
+  background-color:honeydew;
+}
 
 .columnas {
   display: flex;

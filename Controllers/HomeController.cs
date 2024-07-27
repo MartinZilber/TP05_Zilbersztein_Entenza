@@ -55,21 +55,15 @@ public class HomeController : Controller
     }
     public IActionResult Estadisticas()
     {
-        int cantidadIntentosTotales = Escape.CalcularEstadisticas();
-        ViewBag.contadorIntentos = cantidadIntentosTotales;
+        ViewBag.contadorIntentos = Escape.contadorIntentos;
+        ViewBag.vidas = Escape.GetVidas();
         return View("estadisticas");
     }
     public IActionResult Comenzar()
     {
-        if (Escape.GetSesionIniciada()) 
-        {
-            Escape.InicializarJuego();
-            return View("FormInicio");
-        }//que sala
-        else if (Escape.nombre != "")
-        return View("login");
-        else
-        return View("registrarse");
+        Escape.InicializarJuego();
+        return View("FormInicio");
+        //que sala
     }
     public IActionResult Habitacion(int sala, string clave)
     {
@@ -135,27 +129,11 @@ public class HomeController : Controller
 
     public IActionResult Login()
     {
-        if (Escape.intentosInicioSesion > 0)
-        ViewBag.MensajeError = "Uno de los datos es incorrecto";
-        ViewBag.Nombre = Escape.nombre;
         return View("login");
     }
     public IActionResult Registrarse()
     {
         return View("registrarse");
-    }
-    public IActionResult GuardarDatosUsuario(string nombre, string contraseña)
-    {
-        Escape.GuardarDatosUsuario(nombre, contraseña);
-        return View("login");
-    }
-    public IActionResult ValidarInicioSesion(string Nombre, string Contraseña)
-    {
-        bool seInicioSesion = Escape.ValidarDatosUsuario(Nombre, Contraseña);
-        if (seInicioSesion)
-        return View("index");
-        else
-        return View("login");
     }
     public IActionResult pasar()
     {

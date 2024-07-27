@@ -2,20 +2,16 @@
 ViewData["Title"] = "Habitación 9";
 int vidas = ViewBag.Vidas;
 }
-<head>
-
-
-</head>
 <body>
     <h1>Corrientes Subterráneas</h1>
     <h3>UN DESAFÍO EXTRAÑO</h3>
-    <p>@ViewBag.Dato</p>
+    <p class="mensajeIncorrecto">@ViewBag.Dato</p>
     <div>
     <p><b>Vidas restantes:</b></p>
     @for (int i = 0; i < vidas; i++){
     <img class="corazon" src="/images/Corazon.png">
     }
-    <p>Habiendo salido de la sala de ensayo, [FALTA UNA FOTO], ¡encontrás a la hidra! Y te propone jugar un juego en particular...</p>
+    <p>Habiendo salido de la sala de ensayo, ¡encontrás a la hidra! Y te propone jugar un juego en particular...</p>
     <h6>¡PIEDRA, PAPEL O TIJERA!</h6>
     <p>Jugarán hasta tres puntos. Si ganás, ¡podrás pasar de habitación! Si no, ¡perderás una vida!</p>
     <p><b>Ingresá tu jugada:</b></p>
@@ -25,7 +21,7 @@ int vidas = ViewBag.Vidas;
         <input class="btn btn-primary" type="submit" name="Validar">
     </form>
     <p id="jugadaInvalida"></p>
-    <p>@ViewBag.Ronda</p>
+    <p class="ronda">@ViewBag.Ronda</p>
     <p>Tus puntos: @ViewBag.PuntosJugador</p>
     <p>Puntos de la hidra: @ViewBag.PuntosBot</p>
 </body>

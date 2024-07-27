@@ -5,9 +5,7 @@ class Escape
 
     static private string[] incognitasSalas { get; set; } = { "0", "cartel", "a", "ramo", "almohadon", "infoesgenial", "piratas", "para elisa", "", "fuego" };
     static private int estadoJuego { get; set; } = 1;
-    static private int contadorIntentos { get; set; } = 1;
-    static private int contadorIntentosHabitacion { get; set; } = 1;
-    static private int contadorPistas { get; set; } = 0;
+    static public int contadorIntentos { get; set; } = 1;
     static private int vidas { get; set; }
     static private string nivel { get; set; }
     static public string nombre { get; set; } = "";
@@ -37,8 +35,6 @@ class Escape
     public static void InicializarJuego()
     {
         contadorIntentos = 0;
-        contadorIntentosHabitacion = 0;
-        contadorPistas = 0;
         estadoJuego = 1;
         puntosPPTBot = 0;
         puntosPPTJugador = 0;
@@ -69,7 +65,6 @@ class Escape
             if (Incognita == incognitasSalas[Sala - 1])
             {
                 esCorrecto = true;
-                contadorIntentosHabitacion = 0;
                 if (estadoJuego < 9)
                     estadoJuego++;
             }
@@ -131,13 +126,5 @@ class Escape
             vidas = 5;
         else if (nivel == "dificil")
             vidas = 3;
-    }
-    public static int CalcularEstadisticas()
-    {
-        return contadorIntentos;
-    }
-    public static void Incrementar()
-    {
-        contadorPistas++;
     }
 }
