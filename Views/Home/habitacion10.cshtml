@@ -5,7 +5,9 @@
 <h1>Corrientes subterráneas</h1>
 <h3>LA HABITACIÓN INUNDADA</h3>
 <p class="mensajeIncorrecto">@ViewBag.Dato</p>
-<div>
+
+<p>@ViewBag.Dato</p>
+
     <p><b>Vidas restantes:</b></p>
     @for (int i = 0; i < vidas; i++){
     <img class="corazon" src="/images/Corazon.png">
@@ -19,7 +21,7 @@ Recordás que en la mitología griega la hidra tiene solo una debilidad que, en 
     <p><b>Ingresá tu respuesta:</b></p>
     <form action='@Url.Action("Habitacion", "Home")'>
         <input type="hidden" name="sala" value=10>
-        <input autocomplete="off" type="descripcion" name="clave" placeholder="" required><br>
+        <input autocomplete="off" type="text" name="clave" placeholder="" required><br>
         <input class="btn btn-primary" type="submit" name="Validar">
         <input class="btn btn-secondary" type ="reset" name ="Resetear">
     </form>
