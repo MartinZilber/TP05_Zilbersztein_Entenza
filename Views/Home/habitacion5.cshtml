@@ -1,16 +1,19 @@
 @{
     ViewData["Title"] = "Habitación 5";
     int vidas = ViewBag.Vidas;
-} 
+}
 <h1>Corrientes subterráneas</h1>
 <h3>LA MANSIÓN DE PIEDRA</h3>
 <p class="mensajeIncorrecto">@ViewBag.Dato</p>
-    <p><b>Vidas restantes:</b></p>
-    @for (int i = 0; i < vidas; i++){
+<p><b>Vidas restantes:</b></p>
+@for (int i = 0; i < vidas; i++)
+{
     <img class="corazon" src="/images/Corazon.png">
 }
-<p>Al adivinar la palabra, la gritás a toda voz, y una puerta aparece frente a vos. Esta te lleva a una gran mansión, que aparenta haber estado habitada hasta hace muy poco tiempo.
-Hallás una nota: “La oveja negra de la familia simboliza la salvación de esta misma”. ¿Qué objeto es ligeramente diferente a sus pares?
+<p>Al adivinar la palabra, la gritás a toda voz, y una puerta aparece frente a vos. Esta te lleva a una gran mansión,
+    que aparenta haber estado habitada hasta hace muy poco tiempo.
+    Hallás una nota: “La oveja negra de la familia simboliza la salvación de esta misma”. ¿Qué objeto es ligeramente
+    diferente a sus pares?
 </p>
 <div class="columnas">
     <img src="/images/habitacion5.jpg">
@@ -18,8 +21,10 @@ Hallás una nota: “La oveja negra de la familia simboliza la salvación de est
     <form action='@Url.Action("Habitacion", "Home")'>
         <input type="hidden" name="sala" value=5>
         <input autocomplete="off" type="text" name="clave" placeholder="" required><br>
-        <input class="btn btn-primary" type="submit" name="Validar">
-        <input class="btn btn-secondary" type ="reset" name ="Resetear">
+        <div class="input">
+            <input class="btn btn-primary" type="submit" name="Enviar">
+            <input class="btn btn-secondary" type="reset" name="Resetear">
+        </div>
     </form>
     <div>
         <button onclick="alert('Buscá objetos del mismo tipo (por ejemplo puertas).')">Pista 1</button>

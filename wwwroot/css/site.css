@@ -80,6 +80,17 @@ p{
 .columnas div{
   margin-top: 1%; 
 }
+.columnas .input{
+  display:flex;
+  flex-direction:row;
+}
+.input{
+  margin-left:4%;
+}
+.btn-secondary{
+  width:auto;
+  height:30%;
+}
 form{
   margin-top: 1%;
 }

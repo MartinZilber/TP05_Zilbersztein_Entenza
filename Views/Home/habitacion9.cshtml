@@ -21,8 +21,10 @@
             <form id="PPT" action='@Url.Action("ProcesarPPT", "Home")'>
                 <input type="hidden" name="sala" value="9">
                 <input id="jugada" type="text" name="jugada"><br>
-                <input class="btn btn-primary" type="submit" name="Validar">
-                <input class="btn btn-secondary" type="reset" name="Resetear">
+                <div class="input">
+                    <input class="btn btn-primary" type="submit" name="Enviar">
+                    <input class="btn btn-secondary" type="reset" name="Resetear">
+                </div>
             </form>
         </div>
         <p id="jugadaInvalida"></p>

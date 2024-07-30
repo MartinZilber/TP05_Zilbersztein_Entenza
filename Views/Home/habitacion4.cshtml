@@ -1,16 +1,18 @@
 @{
     ViewData["Title"] = "Habitación 4";
     int vidas = ViewBag.Vidas;
-} 
+}
 <h1>Corrientes subterráneas</h1>
 <h3>EL PATIO DESCUIDADO</h3>
 <p class="mensajeIncorrecto">@ViewBag.Dato</p>
-    <p><b>Vidas restantes:</b></p>
-    @for (int i = 0; i < vidas; i++){
+<p><b>Vidas restantes:</b></p>
+@for (int i = 0; i < vidas; i++)
+{
     <img class="corazon" src="/images/Corazon.png">
 }
-<p>Al salir de la habitación gigante, llegás a un pequeño patio que parece haber sido deslumbrante y brillante en un pasado; pero que ahora solo tiene una pileta, algunos objetos en el suelo y unos descuidados yuyos.
-Intentás salir del patio, pero no podés: hay una barrera invisible que te mantiene adentro.
+<p>Al salir de la habitación gigante, llegás a un pequeño patio que parece haber sido deslumbrante y brillante en un
+    pasado; pero que ahora solo tiene una pileta, algunos objetos en el suelo y unos descuidados yuyos.
+    Intentás salir del patio, pero no podés: hay una barrera invisible que te mantiene adentro.
 </p>
 <p>En la imagen, encontrás marcas de diferentes letras con las cuales podés armar una palabra. ¿Qué palabra podés armar?
 </p>
@@ -18,10 +20,12 @@ Intentás salir del patio, pero no podés: hay una barrera invisible que te mant
     <img src="/images/habitacion4.png">
     <p><b>Ingresá tu respuesta:</b></p>
     <form action='@Url.Action("Habitacion", "Home")'>
-        <input type="hidden" name="sala" value= 4>
+        <input type="hidden" name="sala" value=4>
         <input autocomplete="off" type="text" name="clave" placeholder="" required><br>
-        <input class="btn btn-primary" type="submit" name="Validar">
-        <input class="btn btn-secondary" type ="reset" name ="Resetear">
+        <div class="input">
+          <input class="btn btn-primary" type="submit" name="Enviar">
+          <input class="btn btn-secondary" type="reset" name="Resetear">
+        </div>
     </form>
     <div>
         <button onclick="alert('Presta atención al piso')">Pista 1</button>

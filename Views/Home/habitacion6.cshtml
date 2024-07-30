@@ -1,15 +1,20 @@
 @{
     ViewData["Title"] = "Habitación 6";
     int vidas = ViewBag.Vidas;
-} 
+}
 <h1>Corrientes subterráneas</h1>
 <h3>EL ASCENSOR REDENTOR</h3>
 <p class="mensajeIncorrecto">@ViewBag.Dato</p>
-    <p><b>Vidas restantes:</b></p>
-    @for (int i = 0; i < vidas; i++){
+<p><b>Vidas restantes:</b></p>
+@for (int i = 0; i < vidas; i++)
+{
     <img class="corazon" src="/images/Corazon.png">
 }
-<p>Debajo del almohadón encontrás una nota que te indica dirigirte hacia una de las aparentes habitaciones de la mansión, que, en este caso, es un ascensor. Al entrar, las puertas se cierran automáticamente, la cabina sube por unos segundos y se detiene. Sin embargo, sus puertas no se abren. Una voz dice "¿Cuál es la clave para salir?", y escuchás a tu celular prenderse mágicamente. Lo único que ves de utilidad son varios códigos QR incrustados en la pared. ¿Cuál es la clave?
+<p>Debajo del almohadón encontrás una nota que te indica dirigirte hacia una de las aparentes habitaciones de la
+    mansión, que, en este caso, es un ascensor. Al entrar, las puertas se cierran automáticamente, la cabina sube por
+    unos segundos y se detiene. Sin embargo, sus puertas no se abren. Una voz dice "¿Cuál es la clave para salir?", y
+    escuchás a tu celular prenderse mágicamente. Lo único que ves de utilidad son varios códigos QR incrustados en la
+    pared. ¿Cuál es la clave?
 </p>
 <div class="columnas">
     <img src="/images/habitacion6.png">
@@ -17,8 +22,10 @@
     <form action='@Url.Action("Habitacion", "Home")'>
         <input type="hidden" name="sala" value=6>
         <input autocomplete="off" type="text" name="clave" placeholder="" required><br>
-        <input class="btn btn-primary" type="submit" name="Validar">
-        <input class="btn btn-secondary" type ="reset" name ="Resetear">
+        <div class="input">
+            <input class="btn btn-primary" type="submit" name="Enviar">
+            <input class="btn btn-secondary" type="reset" name="Resetear">
+        </div>
     </form>
     <div>
         <button onclick="alert('Mirá detenidamente la imagen')">Pista 1</button>

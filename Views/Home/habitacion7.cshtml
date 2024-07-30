@@ -1,16 +1,19 @@
 @{
     ViewData["Title"] = "Habitación 7";
     int vidas = ViewBag.Vidas;
-} 
+}
 <h1>Corrientes subterráneas</h1>
 <h3>LA HABITACIÓN DE LA NOSTALGIA</h3>
 <p class="mensajeIncorrecto">@ViewBag.Dato</p>
-    <p><b>Vidas restantes:</b></p>
-    @for (int i = 0; i < vidas; i++){
+<p><b>Vidas restantes:</b></p>
+@for (int i = 0; i < vidas; i++)
+{
     <img class="corazon" src="/images/Corazon.png">
 }
-<p>Habiendo escaneado el código correcto e ingresado la clave, entrás a una habitación que recordás haber visto alguna vez en tu vida. Por alguna razón, te trae recuerdos de tu infancia. </p>
-<p>Aquel lugar tiene un objeto particular que le recuerda un juego que hacía con sus amigos cuando era pequeño: ¿a qué te gustaba jugar?</p>
+<p>Habiendo escaneado el código correcto e ingresado la clave, entrás a una habitación que recordás haber visto alguna
+    vez en tu vida. Por alguna razón, te trae recuerdos de tu infancia. </p>
+<p>Aquel lugar tiene un objeto particular que le recuerda un juego que hacía con sus amigos cuando era pequeño: ¿a qué
+    te gustaba jugar?</p>
 <p>Nota: ingresá el juego en su forma en plural.</p>
 <div class="columnas">
     <img src="/images/habitacion7.png">
@@ -18,11 +21,14 @@
     <form action='@Url.Action("Habitacion", "Home")'>
         <input autocomplete="off" type="descripcion" name="clave" placeholder="" required><br>
         <input type="hidden" name="sala" value=7>
-        <input class="btn btn-primary" type="submit" name="Validar">
-        <input class="btn btn-secondary" type ="reset" name ="Resetear">
+        <div class="input">
+            <input class="btn btn-primary" type="submit" name="Enviar">
+            <input class="btn btn-secondary" type="reset" name="Resetear">
+        </div>
     </form>
     <div>
         <button onclick="alert('Presta atención a los objetos de madera la habitación')">Pista 1</button>
-        <button onclick="alert('¿Con qué podes relacionar el baul? Agranda la imagen en caso de ser necesario.')">Pista 2</button>
+        <button onclick="alert('¿Con qué podes relacionar el baul? Agranda la imagen en caso de ser necesario.')">Pista
+            2</button>
     </div>
 </div>
