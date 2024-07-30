@@ -1,43 +1,48 @@
 @{
-ViewData["Title"] = "Habitación 9";
-int vidas = ViewBag.Vidas;
+    ViewData["Title"] = "Habitación 9";
+    int vidas = ViewBag.Vidas;
 }
+
 <body>
     <h1>Corrientes Subterráneas</h1>
     <h3>UN DESAFÍO EXTRAÑO</h3>
-    <p class="mensajeIncorrecto">@ViewBag.Dato</p>
+    <p class="partidaPerdida">@ViewBag.Partida</p>
     <div>
-    <p><b>Vidas restantes:</b></p>
-    @for (int i = 0; i < vidas; i++){
-    <img class="corazon" src="/images/Corazon.png">
-    }
-    <p>Habiendo salido de la sala de ensayo, ¡encontrás a la hidra! Y te propone jugar un juego en particular...</p>
-    <h6>¡PIEDRA, PAPEL O TIJERA!</h6>
-    <p>Jugarán hasta tres puntos. Si ganás, ¡podrás pasar de habitación! Si no, ¡perderás una vida!</p>
-    <p><b>Ingresá tu jugada:</b></p>
-    <form id="PPT" action='@Url.Action("ProcesarPPT", "Home")'>
-        <input type="hidden" name="sala" value="9">
-        <input id="jugada" type="text" name="jugada"><br>
-        <input class="btn btn-primary" type="submit" name="Validar">
-    </form>
-    <p id="jugadaInvalida"></p>
-    <p class="ronda">@ViewBag.Ronda</p>
-    <p>Tus puntos: @ViewBag.PuntosJugador</p>
-    <p>Puntos de la hidra: @ViewBag.PuntosBot</p>
+        <p><b>Vidas restantes:</b></p>
+        @for (int i = 0; i < vidas; i++)
+        {
+            <img class="corazon" src="/images/Corazon.png">
+        }
+        <p>Habiendo salido de la sala de ensayo, ¡encontrás a la hidra! Y te propone jugar un juego en particular...</p>
+        <h6>¡PIEDRA, PAPEL O TIJERA!</h6>
+        <p>Jugarán hasta tres puntos. Si ganás, ¡podrás pasar de habitación! Si no, ¡perderás una vida!</p>
+        <div class="columnas">
+            <p><b>Ingresá tu jugada:</b></p>
+            <form id="PPT" action='@Url.Action("ProcesarPPT", "Home")'>
+                <input type="hidden" name="sala" value="9">
+                <input id="jugada" type="text" name="jugada"><br>
+                <input class="btn btn-primary" type="submit" name="Validar">
+                <input class="btn btn-secondary" type="reset" name="Resetear">
+            </form>
+        </div>
+        <p id="jugadaInvalida"></p>
+        <p class="ronda">@ViewBag.Ronda</p>
+        <p>Tus puntos: @ViewBag.PuntosJugador</p>
+        <p>Puntos de la hidra: @ViewBag.PuntosBot</p>
 </body>
 
 
 @* <div class="columnas">
-    <img src="/images/habitacion9.jpg">
-    <audio controls src="/audios/AudioHabitacion8.mp4">Audio</audio>
-    <form action='@Url.Action("Habitacion", "Home")'>
-        <input type="hidden" name="sala" value=9>
-        <input autocomplete="off" type="text" name="clave" placeholder="" required><br>
-        <input class="btn btn-primary" type="submit" name="Validar">
-        <input class="btn btn-secondary" type ="reset" name ="Resetear">
-    </form>
-    <div>
-        <button onclick="alert('¿Cuáles de los objetos pueden ser relacionados con juegos?')">Pista 1</button>
-        <button onclick="alert('Presta atención a los objetos de madera')">Pista 2</button>
-    </div>
+<img src="/images/habitacion9.jpg">
+<audio controls src="/audios/AudioHabitacion8.mp4">Audio</audio>
+<form action='@Url.Action("Habitacion", "Home")'>
+<input type="hidden" name="sala" value=9>
+<input autocomplete="off" type="text" name="clave" placeholder="" required><br>
+<input class="btn btn-primary" type="submit" name="Validar">
+<input class="btn btn-secondary" type ="reset" name ="Resetear">
+</form>
+<div>
+<button onclick="alert('¿Cuáles de los objetos pueden ser relacionados con juegos?')">Pista 1</button>
+<button onclick="alert('Presta atención a los objetos de madera')">Pista 2</button>
+</div>
 </div> *@

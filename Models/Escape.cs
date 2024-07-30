@@ -15,23 +15,6 @@ class Escape
     static private bool sesionIniciada { get; set; } = false;
     static public int intentosInicioSesion { get; set; } = 0;
 
-
-    public static void GuardarDatosUsuario(string Nombre, string Contraseña)
-    {
-        nombre = Nombre;
-        contraseña = Contraseña;
-    }
-    public static bool ValidarDatosUsuario(string Nombre, string Contraseña)
-    {
-        if (nombre == Nombre && contraseña == Contraseña)
-            sesionIniciada = true;
-        else
-        {
-            intentosInicioSesion++;
-            sesionIniciada = false;
-        }
-        return sesionIniciada;
-    }
     public static void InicializarJuego()
     {
         contadorIntentos = 0;
