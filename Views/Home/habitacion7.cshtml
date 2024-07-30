@@ -5,9 +5,10 @@
 <h1>Corrientes subterráneas</h1>
 <h3>LA HABITACIÓN DE LA NOSTALGIA</h3>
 <p class="mensajeIncorrecto">@ViewBag.Dato</p>
-<p><b>Vidas restantes:</b></p>
-@for (int i = 0; i < vidas; i++)
-{
+
+    <p>@ViewBag.Dato</p>
+    <p><b>Vidas restantes:</b></p>
+    @for (int i = 0; i < vidas; i++){
     <img class="corazon" src="/images/Corazon.png">
 }
 <p>Habiendo escaneado el código correcto e ingresado la clave, entrás a una habitación que recordás haber visto alguna
