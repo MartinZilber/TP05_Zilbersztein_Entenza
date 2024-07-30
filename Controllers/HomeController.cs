@@ -41,6 +41,7 @@ public class HomeController : Controller
     }
     public IActionResult Victoria()
     {
+        ViewBag.Nombre = Escape.nombre;
         return View("victoria");
     }
     public IActionResult Ajustes()
@@ -78,7 +79,7 @@ public class HomeController : Controller
                 ViewBag.PuntosBot = Escape.puntosPPTBot;
             }
             if (Escape.GetEstadoJuego() >= 10)
-                return View("victoria");
+                return RedirectToAction("victoria");
         }
         else
         {
