@@ -66,6 +66,10 @@ p{
   width:11%;
   background-color:honeydew;
 }
+.partidaPerdida{
+  width:12%;
+  background-color:red;
+}
 
 .columnas {
   display: flex;

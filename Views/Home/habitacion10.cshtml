@@ -5,18 +5,15 @@
 <h1>Corrientes subterráneas</h1>
 <h3>LA HABITACIÓN INUNDADA</h3>
 <p class="mensajeIncorrecto">@ViewBag.Dato</p>
-
-<p>@ViewBag.Dato</p>
-
-    <p><b>Vidas restantes:</b></p>
-    @for (int i = 0; i < vidas; i++){
+<p><b>Vidas restantes:</b></p>
+@for (int i = 0; i < vidas; i++){
     <img class="corazon" src="/images/Corazon.png">
 }
 <p>Habiendo triunfado contra la hidra en el piedra, papel o tijera, esta desaparece y la puerta de la siguiente habitación se abre. Sin embargo, al pasar por esta, no te das cuenta y la cerrás. Intentás abrirla nuevamente, no podés. Estás encerrado.</p>
-<p> El piso está inundado y, enfrente tuyo, ves aparecer a la hidra. No se te ocurre forma de matarla, por lo que llegás a la conclusión de que tendrás que pasar de sala en sala, y así sucesivamente con el fin de escapar. Sabés que no vas a poder hacer esto por toda la eternidad, por lo que tenés que pensar una solución.</p>
+<p>El piso está inundado y, enfrente tuyo, ves aparecer a la hidra. No se te ocurre forma de matarla, por lo que llegás a la conclusión de que tendrás que pasar de sala en sala, y así sucesivamente con el fin de escapar. Sabés que no vas a poder hacer esto por toda la eternidad, por lo que tenés que pensar una solución.</p>
 <p>La hidra se acerca rápidamente. Debés acabar con ella. 
 Recordás que en la mitología griega la hidra tiene solo una debilidad que, en cierto modo, contradice su nombre. Si lo recordás, podrás obtenerlo y matar al monstruo. ¿Qué elemento necesitás?</p>
-<div class="columas">
+<div class="columnas">
     <img src="/images/habitacion10.png">
     <p><b>Ingresá tu respuesta:</b></p>
     <form action='@Url.Action("Habitacion", "Home")'>
