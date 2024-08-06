@@ -5,15 +5,13 @@ class Escape
 
     static private string[] incognitasSalas { get; set; } = { "0", "cartel", "a", "ramo", "almohadon", "infoesgenial", "piratas", "para elisa", "", "fuego" };
     static private int estadoJuego { get; set; } = 1;
+    static private string nivel { get; set; }
     static public int contadorIntentos { get; set; } = 1;
     static private int vidas { get; set; }
-    static private string nivel { get; set; }
     static public string nombre { get; set; } = "";
-    static private string contraseña { get; set; } = "";
     static public int puntosPPTJugador { get; set; } = 0;
     static public int puntosPPTBot { get; set; } = 0;
-    static private bool sesionIniciada { get; set; } = false;
-    static public int intentosInicioSesion { get; set; } = 0;
+    static public List<char> listaAbecedario { get; set; } = new List<char>() { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
     public static void InicializarJuego()
     {
@@ -33,10 +31,6 @@ class Escape
     public static string GetNivel()
     {
         return nivel;
-    }
-    public static bool GetSesionIniciada()
-    {
-        return sesionIniciada;
     }
 
     public static bool ResolverSala(int Sala, string Incognita)
@@ -66,7 +60,7 @@ class Escape
         int ganador = 0;
         if (sala == estadoJuego)
         {
-            jugadaBot = jugadas[generarRandom(0, 2)];
+            jugadaBot = jugadas[generarRandom(0, 3)];
             if (jugada == "papel" && jugadaBot == "piedra" || jugada == "tijera" && jugadaBot == "papel" || jugada == "piedra" && jugadaBot == "tijera")
             {
                 puntosPPTJugador++;
@@ -94,20 +88,24 @@ class Escape
         int numero = r.Next(minimo, maximo);
         return numero;
     }
-    public static string GuardarNombre(string Nombre)
+    public static bool GuardarNombre(string Nombre)
     {
-        if (Nombre != null)
+        bool nombreCorrecto = false;
+        if (Nombre != null && listaAbecedario.IndexOf(Nombre[0]) != -1)
+        {
             nombre = Nombre;
-        return nombre;
+            nombreCorrecto = true;
+        }
+        return nombreCorrecto;
     }
     public static void GuardarNivel(string Nivel)
     {
         nivel = Nivel;
-        if (nivel == "facil")
+        if (Nivel == "facil")
             vidas = 10;
-        else if (nivel == "medio")
+        else if (Nivel == "medio")
             vidas = 5;
-        else if (nivel == "dificil")
+        else if (Nivel == "dificil")
             vidas = 3;
     }
 }

@@ -54,17 +54,10 @@ public class HomeController : Controller
         ViewBag.Nivel = Escape.GetNivel();
         return View("derrota");
     }
-    public IActionResult Estadisticas()
-    {
-        ViewBag.contadorIntentos = Escape.contadorIntentos;
-        ViewBag.vidas = Escape.GetVidas();
-        return View("estadisticas");
-    }
     public IActionResult Comenzar()
     {
         Escape.InicializarJuego();
         return View("FormInicio");
-        //que sala
     }
     public IActionResult Habitacion(int sala, string clave)
     {
@@ -116,17 +109,16 @@ public class HomeController : Controller
     }
     public IActionResult GuardarDatos(string nombre, string Nivel)
     {
-        ViewBag.Nombre = Escape.GuardarNombre(nombre);
-        Escape.GuardarNivel(Nivel);
-        ViewBag.Vidas = Escape.GetVidas();
-        Escape.InicializarJuego();
-        return View("habitacion" + Escape.GetEstadoJuego());
+        bool nombreGuardado = Escape.GuardarNombre(nombre);
+        if (nombreGuardado)
+        {
+            Escape.GuardarNivel(Nivel);
+            ViewBag.Vidas = Escape.GetVidas();
+            Escape.InicializarJuego();
+            return View("habitacion" + Escape.GetEstadoJuego());
+        }
+        else return View("FormInicio");
     }
-    /*public IActionResult Incrementar()
-    {
-        Escape.Incrementar();
-        return View("habitacion" + Escape.GetEstadoJuego());
-    }*/
 
     public IActionResult Login()
     {
